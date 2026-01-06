@@ -1,0 +1,31 @@
+---
+title: "Making Code Ready"
+---
+
+# Making Code Ready for Publication
+
+Created: May 30, 2025 3:47 PM
+Authors: @Ted Laderas 
+Level: Intermediate
+Prerequisites: Intro to GitHub
+Season Offered: S9
+Status: In progress
+Taxonomy: Transparent Research
+Teaching Format: Workshop
+
+## Description
+
+Code is an important product to share for publication. There are numerous benefits to sharing your code, including for your career and because publications now require it.
+
+In this workshop, we will discuss ways to share analysis code in your publication, from sharing scripts and notebooks on github, to making your code executable via systems such as binder.org, to packaging your code to share with others as a software package. 
+
+## Learning Objectives
+
+- **Explore** examples of code in repositories being submitted with a paper (https://github.com/KarstensLab/igaseq example; https://github.com/laderast/ExonModelStrain example)
+- **Explain** what kinds of files in a minimum set to include to share code and analyses in Python and R
+- **Utilize** systems such as [mybinder.org](http://mybinder.org) or GitHub codespaces to make your code runnable from your GitHub repository
+- **Discuss** the benefits of packaging and submitting your code to package repositories such as CRAN or PyPi
+
+## Prerequisite
+
+- Intro to Git/GitHub highly suggested

@@ -1,0 +1,244 @@
+---
+title: "Untitled"
+format: revealjs
+---
+
+## Outline
+
+- **Why** make your code ready for publication?
+- **What** do you need to make it ready?
+- **How** and where do you make it available?
+
+## Why?
+![[image.png]]
+
+## Why: Documentation is Important
+
+- Do it for Future You
+- Others in your lab
+- Others in your field
+
+## Why: Reproducibility Matters
+
+- [Duke Medicine biomarker scandal](https://www.science.org/content/blog-post/duke-cancer-scandal-and-personalized-medicine)
+- Software is an important output
+
+## What: Minimum Information for Analyses
+
+- Data Analysis in R / Python
+	- Organize your analysis in a folder and share in a repository
+	- Notebook(s)
+	- Lockfile
+	- Data (if small enough)
+- Genomic Processing (not covered today)
+	- Accession Number for your Dataset
+	- List of files processed in workflow
+	- WDL or Nextflow workflow file
+
+## Project Example:
+
+```
+my_project/                ## Top level
+├── data/                   ## Data directory
+│   └── my_data.vcf  
+├─- output/                 ## Share output    
+└── 01_preprocessing.R     ## Scripts in order
+└── 02_deseq2_analysis.qmd
+└── 03_visualization.ipynb
+├── renv.lock              ## Packages 
+|						   ## installed with
+|                          ## Version numbers
+└── README.md
+```
+
+## Relative Paths
+
+Everything should be runnable from the top folder of the project. Use relative paths from the project folder:
+
+```r
+my_data <- readr::read_csv("data/datafile.csv")
+```
+
+Example of a reproducible project:
+
+[https://github.com/biodev/beataml2_manuscript](https://github.com/biodev/beataml2_manuscript)
+
+## What: README
+
+```
+my_project/                ## Top level
+└── README.md
+```
+
+![[Pasted image 20251219130456.png]]
+
+- First thing that people will see
+	- https://github.com/biodev/HNSCC_Notebook
+- Document the basic workflow of processing
+	- How does the data come together in the analysis?
+
+## What: Notebooks / Analysis Files
+```
+my_project/                ## Top level    
+├── 01_preprocessing.R     ## Scripts in order
+├── 02_deseq2_analysis.qmd
+└── 03_visualization.ipynb
+```
+
+- Easiest: place in your root folder
+- Number in order
+	- `01_preprocessing.R`
+	- `02_deseq2_analysis.qmd`
+- Use relative paths in your scripts
+	- Ensures portability across computers
+	- `read_csv("data/seq_counts.csv")`
+
+## What: Lockfile
+
+```
+my_project/                ## Top level
+├── renv.lock   
+```
+
+```{mermaid}
+graph LR
+    A[Python Project] --"pip freeze"--> B["requirements.txt"]
+```
+
+```{mermaid}
+graph LR
+    A[R Project] --"renv::snapshot()"--> B["renv.lock"]
+```
+
+- List of packages and versions that you used in analysis
+- Post analysis:
+    - Python: `pip freeze > requirements.txt`
+    - R: `renv::snapshot()`
+- Talk about `rv` and `uv` in Package management session
+
+## Reproducing environment from lockfile
+
+
+
+## What: Data in a Project
+```
+my_project/                ## Top level
+├── data                   ## Data directory
+│   └── my_data.vcf  
+```
+
+- Genomic and omics data is large
+    - raw data is not practical for GitHub (100 Mb limit)
+    - Store raw files in required respositories
+- Supply intermediate formats used to do the analysis:
+    - MAF
+    - VCF
+    - CSV
+    
+## What: A Note about data
+
+- Large genomic data - sharing raw data is impractical
+	- Use Intermediate formats instead, such as VCF files, CSV files
+- Data repositories
+	- Open Science Framework
+	- Required databases (dbGAP)
+	- Be aware that you will need to provide metadata
+		- Experimental design
+- With code, share File Manifests - list the files you processed
+    - JSON files from workflows
+    - Metadata / Experimental Design
+        - Where does each sample fit into Experimental Design?
+- Focus on shareable formats
+
+## What: Computational Environments
+
+![[image 1.png]]
+
+- Bare minimum:
+    - Lockfiles
+        - `requirements.txt` Python
+            - `pip freeze > requirements.txt`
+        - `renv.lock`  R
+            - `renv::snapshot()` to generate `renv.lock` file
+            - `rv migrate renv` to move to `rv`
+- Docker Containers
+    - Docker Q&A session
+- Don’t try to create Dockerfiles from scratch
+    - Community Images: BioC, Rocker Project, WILDS Docker Library
+    - Use https://repo2docker.readthedocs.io/en/latest/
+        - https://repo2docker.readthedocs.io/en/latest/configuration/#config-files
+- Launch on BinderHub
+    - https://github.com/biodev/HNSCC_Notebook
+
+## How and Where: Testing your shared project
+
+- Try downloading and installing on a different computer to make sure that you can rerun analyses
+- Take someone else through the process and test out the notebooks
+- If making binder ready: test the repository on Binder
+
+## Review Opportunities
+- Review Opportunities
+    - Data House Calls
+    - PyOpenSci and ROpenSci for code review if you decide to package your code
+    - WILDS WDL Library
+    - WILDS Docker Library (?)
+        - If you’re making a package
+## How and Where: Sharing Your Analyses
+
+- GitHub (for code)
+- Open Science Framework (for code + data)
+- Field specific databases
+- Social Media: LinkedIn, Bluesky, etc.
+
+## Where should you share code?
+
+Share in a public repository:
+
+- GitHub
+- Codeberg
+- ReadtheDocs
+
+Be aware of file size limitations! 
+
+## References
+
+- https://book.the-turing-way.org/reproducible-research/compendia/
+- https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510
+- https://openscapes.github.io/series/core-lessons/coding-strategies.html
+- https://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html
+- https://www.nature.com/articles/s41467-021-25974-w
+- https://journals.plos.org/plosone/s/materials-software-and-code-sharing - Materials, Software and Code
+- https://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines
+- https://binderhub.readthedocs.io/en/latest/overview.html
+
+## Definitions
+
+| Freire framework | Definitions of reproducibilty |  |
+| --- | --- | --- |
+| Repeatable | Reproducible (same data, same analysis) | GitHub Repo or OSF project |
+| Re-runnable | Robust & Replicable (same code, different data/analysis/parameters) | Documentation, functions |
+| Portable | *Not considered* (same code/data, different environment) | requirements.txt, Dockerfile |
+| Extendable | (partly) Generalisable |  |
+| Modifiable | (partly) Generalisable |  |
+|  |  |  |
+|  |  |  |
+
+Source: https://book.the-turing-way.org/reproducible-research/code-reuse
+
+## Outline (old)
+
+- Defining reproducibility
+    - https://osf.io/numa5 reproducible paper checklist
+    - [NIH Best Practices for Sharing Software](https://datascience.nih.gov/tools-and-analytics/best-practices-for-sharing-research-software-faq#:~:text=Making%20software%20and%20code%20%E2%80%9Copen,accessible%20repository%20with%20version%20control)
+- Repeatable
+    - The GitHub Ecosystem + Zenodo
+    - Open Science Framework
+- Re-runnable
+    - Documentation
+    - Functions
+    - Packaging
+- Portable
+    - Containerization
+    - Starting points
+    - BinderHub
+    - GitHub Codespaces
