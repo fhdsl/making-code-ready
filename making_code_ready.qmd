@@ -9,6 +9,13 @@ format: html
 - **What** do you need to make it ready?
 - **How** and where do you make it available?
 
+## Who this is for
+
+- Majority of us want to share analyses, not software
+- Leverage some principles from software packaging to share scripts and notebooks
+- Software packaging is its own topic
+
+
 ## Why?
 ![](project.png)
 
@@ -18,23 +25,28 @@ format: html
 - Others in your lab
 - Others in your field
 
-## Why: Python is a Moving Target
-
-- Packages may depend on certain versions of Python
-- Dependency Hell
-
-
 ## Why: Reproducibility Matters
 
 - [Duke Medicine biomarker scandal](https://www.science.org/content/blog-post/duke-cancer-scandal-and-personalized-medicine)
 - Software is an important output
+
+## Reproducibility is a Spectrum
+
+- Do what you can
+- Providing a good framework for running analyses
+
+## Why: Languages are Moving Targets
+
+- Packages may depend on certain versions of Python/R
+- Dependency Hell
+- Need a way to "freeze" or "pin" versions used in analysis
 
 ## Why: Reproducibility is an iterative process
 
 - When possible, start from the beginning
 - Use package management and environments from the start
     - `rv` / `uv` (in Package management session)
-- Test out running scripts and notebooks
+- Test out running scripts and notebooks as you go
 
 # What: Parts of a Reproducible Project
 
@@ -46,7 +58,7 @@ format: html
 	- [ ] Notebook(s) / Scripts
 	- [ ] Lockfile
 	- [ ] Data (if small enough)
-
+    - [ ] README
 
 ## Project Example:
 
@@ -90,6 +102,33 @@ my_data <- readr::read_csv("data/datafile.csv")
 Example of a reproducible project:
 
 [https://github.com/biodev/beataml2_manuscript](https://github.com/biodev/beataml2_manuscript)
+
+
+## What: Data in a Project
+```
+my_project/                ## Top level
+├── data                   ## Data directory
+│   └── my_data.vcf  
+```
+
+- Genomic and omics data is large
+    - raw data is not practical for GitHub (100 Mb limit)
+    - Store raw files in required respositories
+- Supply intermediate formats used to do the analysis:
+    - MAF
+    - VCF
+    - CSV
+
+## What: A Note about data
+
+[Reproducibility in the Genomics Era](https://pmc.ncbi.nlm.nih.gov/articles/PMC11312195/)
+
+- Large genomic data - sharing raw data is impractical in a project
+	- Use Intermediate formats instead, such as VCF files, CSV files
+- With code, share metadata - list the files you processed
+    - JSON files from workflows
+    - Metadata / Experimental Design
+        - Where does each sample fit into Experimental Design?
 
 
 ## Reproducible Environments
@@ -180,48 +219,84 @@ cffi==2.0.0
 
 Give zipped folder to someone else or host on github
 
+::: {.panel-tabset}
+
+## Python
+
 ```python
 venv
 source venv/bin/activate
 pip install -r requirements.txt
-```
+``` 
+
+## R
 
 ```r
 install.packages("renv")
 renv::restore()
 ```
 
+:::
+
+
+
+
 
 ## What: Making a Lockfile from your current project
 
-```{mermaid}
-graph LR
-    A[Python Project] --"pip freeze"--> B["requirements.txt"]
+::: {.panel-tabset}
+
+## Python
+
+```python
+import session-info as si
+# put this at the end of your notebook
+si.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name="requirements.txt")
 ```
 
-```{mermaid}
-graph LR
-    A[R Project] --"renv::snapshot()"--> B["renv.lock"]
+- Install the session-info module: 
+
+## R
+
+```r
+renv::snapshot()
 ```
+
+- Can use the `renv` package to generate a current list of packages
+- Does not require a virtual environment to be initialized
+
+:::
 
 ## Why not Conda?
 
-Anaconda is charging institutions for using their forges
+Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.
 
-## Binder Ready Repository
+For more info: <https://conda-forge.fredhutch.org/>
 
-A special way to Share your analysis
+## What: Binder Ready Repository
+
+A special way to share your analysis
 
 - Put your project on GitHub
 - Can plug your repository link into `mybinder.org`
-- Generates JupyterLab / RStudio / Shiny Server
-- Uses `requirements.txt` (Python) or `install.R` (R) or Dockerfiles
+- Generates JupyterLab / RStudio / Shiny Server instance
 
 
-## Binder.org
+## What: Binder.org
+
+![](binder.jpg)
+
+## How does Binder work?
+
+- Uses `requirements.txt` (Python) or `install.R` (R) or Dockerfiles in your repository
+- Installs relevant packages 
+- Launches your analysis in a container (Dockerizes your analysis)
 
 
+## Some Cons about Binder
 
+- Currently limited to 1 Gb of memory for an instance
+- 
 
 ## Dockerfile
 
@@ -231,44 +306,17 @@ A precise list of instructions to install your computational environment.
 
 More useful if you are distributing software. 
 
-## What: Data in a Project
-```
-my_project/                ## Top level
-├── data                   ## Data directory
-│   └── my_data.vcf  
-```
+## Dockerfile Tips
 
-- Genomic and omics data is large
-    - raw data is not practical for GitHub (100 Mb limit)
-    - Store raw files in required respositories
-- Supply intermediate formats used to do the analysis:
-    - MAF
-    - VCF
-    - CSV
+- Don’t try to create Dockerfiles from scratch
+    - Community Images: BioC, Rocker Project, WILDS Docker Library
+    - Use https://repo2docker.readthedocs.io/en/latest/
+        - https://repo2docker.readthedocs.io/en/latest/configuration/#config-files
 
-## What: A Note about data
 
-[Reproducibility in the Genomics Era](https://pmc.ncbi.nlm.nih.gov/articles/PMC11312195/)
+## Nix
 
-- Large genomic data - sharing raw data is impractical in a project
-	- Use Intermediate formats instead, such as VCF files, CSV files
-- Data repositories
-	- Open Science Framework
-	- Required databases (dbGAP)
-	- Be aware that you will need to provide metadata
-		- Experimental design
-- With code, share File Manifests - list the files you processed
-    - JSON files from workflows
-    - Metadata / Experimental Design
-        - Where does each sample fit into Experimental Design?
-- Focus on shareable formats
-
-## 
-
-- Genomic Processing (not covered today)
-	- Accession Number for your Dataset
-	- List of files processed in workflow
-	- WDL or Nextflow workflow file
+- Currently investigating Nix as a language agnostic reproducibility framework
 
 
 ## What: README
@@ -278,33 +326,13 @@ my_project/                ## Top level
 └── README.md
 ```
 
-![[Pasted image 20251219130456.png]]
+![workflow.png](workflow.png)
 
 - First thing that people will see
 	- https://github.com/biodev/HNSCC_Notebook
 - Document the basic workflow of processing
 	- How does the data come together in the analysis?
 
-
-## What: Computational Environments
-
-![[image 1.png]]
-
-- Bare minimum:
-    - Lockfiles
-        - `requirements.txt` Python
-            - `pip freeze > requirements.txt`
-        - `renv.lock`  R
-            - `renv::snapshot()` to generate `renv.lock` file
-            - `rv migrate renv` to move to `rv`
-- Docker Containers
-    - Docker Q&A session
-- Don’t try to create Dockerfiles from scratch
-    - Community Images: BioC, Rocker Project, WILDS Docker Library
-    - Use https://repo2docker.readthedocs.io/en/latest/
-        - https://repo2docker.readthedocs.io/en/latest/configuration/#config-files
-- Launch on BinderHub
-    - https://github.com/biodev/HNSCC_Notebook
 
 
 # How
@@ -315,13 +343,16 @@ my_project/                ## Top level
 - Take someone else through the process and test out the notebooks
 - If making binder ready: test the repository on Binder
 
-## Review Opportunities
+
+## How: Review Opportunities
+
 - Review Opportunities
     - Data House Calls
     - PyOpenSci and ROpenSci for code review if you decide to package your code
     - WILDS WDL Library
     - WILDS Docker Library (?)
         - If you’re making a package
+
 ## How and Where: Sharing Your Analyses
 
 - GitHub (for code)
@@ -339,6 +370,17 @@ Share in a public repository:
 
 Be aware of file size limitations! 
 
+## How: Data Repositories
+
+- Data repositories
+	- Open Science Framework
+	- Required databases (dbGAP)
+	- Be aware that you will need to provide metadata
+		- Experimental design
+    - Be careful when sharing human subjects data
+        - If unsure, schedule a Data Governance House Call
+
+
 ## References
 
 - <https://book.the-turing-way.org/reproducible-research/compendia/>
@@ -350,17 +392,6 @@ Be aware of file size limitations!
 - https://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines
 - https://binderhub.readthedocs.io/en/latest/overview.html
 
-## Definitions
-
-| Freire framework | Definitions of reproducibilty |  |
-| --- | --- | --- |
-| Repeatable | Reproducible (same data, same analysis) | GitHub Repo or OSF project |
-| Re-runnable | Robust & Replicable (same code, different data/analysis/parameters) | Documentation, functions |
-| Portable | *Not considered* (same code/data, different environment) | requirements.txt, Dockerfile |
-| Extendable | (partly) Generalisable |  |
-| Modifiable | (partly) Generalisable |  |
-|  |  |  |
-|  |  |  |
 
 Source: https://book.the-turing-way.org/reproducible-research/code-reuse
 

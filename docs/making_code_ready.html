@@ -159,10 +159,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
+  <li><a href="#who-this-is-for" id="toc-who-this-is-for" class="nav-link" data-scroll-target="#who-this-is-for">Who this is for</a></li>
   <li><a href="#why" id="toc-why" class="nav-link" data-scroll-target="#why">Why?</a></li>
   <li><a href="#why-documentation-is-important" id="toc-why-documentation-is-important" class="nav-link" data-scroll-target="#why-documentation-is-important">Why: Documentation is Important</a></li>
-  <li><a href="#why-python-is-a-moving-target" id="toc-why-python-is-a-moving-target" class="nav-link" data-scroll-target="#why-python-is-a-moving-target">Why: Python is a Moving Target</a></li>
   <li><a href="#why-reproducibility-matters" id="toc-why-reproducibility-matters" class="nav-link" data-scroll-target="#why-reproducibility-matters">Why: Reproducibility Matters</a></li>
+  <li><a href="#reproducibility-is-a-spectrum" id="toc-reproducibility-is-a-spectrum" class="nav-link" data-scroll-target="#reproducibility-is-a-spectrum">Reproducibility is a Spectrum</a></li>
+  <li><a href="#why-languages-are-moving-targets" id="toc-why-languages-are-moving-targets" class="nav-link" data-scroll-target="#why-languages-are-moving-targets">Why: Languages are Moving Targets</a></li>
   <li><a href="#why-reproducibility-is-an-iterative-process" id="toc-why-reproducibility-is-an-iterative-process" class="nav-link" data-scroll-target="#why-reproducibility-is-an-iterative-process">Why: Reproducibility is an iterative process</a></li>
   <li><a href="#what-parts-of-a-reproducible-project" id="toc-what-parts-of-a-reproducible-project" class="nav-link" data-scroll-target="#what-parts-of-a-reproducible-project">What: Parts of a Reproducible Project</a>
   <ul class="collapse">
@@ -170,28 +172,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#project-example" id="toc-project-example" class="nav-link" data-scroll-target="#project-example">Project Example:</a></li>
   <li><a href="#what-notebooks-analysis-files" id="toc-what-notebooks-analysis-files" class="nav-link" data-scroll-target="#what-notebooks-analysis-files">What: Notebooks / Analysis Files</a></li>
   <li><a href="#relative-paths" id="toc-relative-paths" class="nav-link" data-scroll-target="#relative-paths">Relative Paths</a></li>
+  <li><a href="#what-data-in-a-project" id="toc-what-data-in-a-project" class="nav-link" data-scroll-target="#what-data-in-a-project">What: Data in a Project</a></li>
+  <li><a href="#what-a-note-about-data" id="toc-what-a-note-about-data" class="nav-link" data-scroll-target="#what-a-note-about-data">What: A Note about data</a></li>
   <li><a href="#reproducible-environments" id="toc-reproducible-environments" class="nav-link" data-scroll-target="#reproducible-environments">Reproducible Environments</a></li>
   <li><a href="#what-lockfile" id="toc-what-lockfile" class="nav-link" data-scroll-target="#what-lockfile">What: Lockfile</a></li>
   <li><a href="#lockfile-examples" id="toc-lockfile-examples" class="nav-link" data-scroll-target="#lockfile-examples">Lockfile Examples</a></li>
   <li><a href="#what-reproducing-environment-from-lockfile" id="toc-what-reproducing-environment-from-lockfile" class="nav-link" data-scroll-target="#what-reproducing-environment-from-lockfile">What: Reproducing environment from lockfile</a></li>
   <li><a href="#what-making-a-lockfile-from-your-current-project" id="toc-what-making-a-lockfile-from-your-current-project" class="nav-link" data-scroll-target="#what-making-a-lockfile-from-your-current-project">What: Making a Lockfile from your current project</a></li>
   <li><a href="#why-not-conda" id="toc-why-not-conda" class="nav-link" data-scroll-target="#why-not-conda">Why not Conda?</a></li>
-  <li><a href="#binder-ready-repository" id="toc-binder-ready-repository" class="nav-link" data-scroll-target="#binder-ready-repository">Binder Ready Repository</a></li>
-  <li><a href="#binder.org" id="toc-binder.org" class="nav-link" data-scroll-target="#binder.org">Binder.org</a></li>
+  <li><a href="#what-binder-ready-repository" id="toc-what-binder-ready-repository" class="nav-link" data-scroll-target="#what-binder-ready-repository">What: Binder Ready Repository</a></li>
+  <li><a href="#what-binder.org" id="toc-what-binder.org" class="nav-link" data-scroll-target="#what-binder.org">What: Binder.org</a></li>
+  <li><a href="#how-does-binder-work" id="toc-how-does-binder-work" class="nav-link" data-scroll-target="#how-does-binder-work">How does Binder work?</a></li>
+  <li><a href="#some-cons-about-binder" id="toc-some-cons-about-binder" class="nav-link" data-scroll-target="#some-cons-about-binder">Some Cons about Binder</a></li>
   <li><a href="#dockerfile" id="toc-dockerfile" class="nav-link" data-scroll-target="#dockerfile">Dockerfile</a></li>
-  <li><a href="#what-data-in-a-project" id="toc-what-data-in-a-project" class="nav-link" data-scroll-target="#what-data-in-a-project">What: Data in a Project</a></li>
-  <li><a href="#what-a-note-about-data" id="toc-what-a-note-about-data" class="nav-link" data-scroll-target="#what-a-note-about-data">What: A Note about data</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#dockerfile-tips" id="toc-dockerfile-tips" class="nav-link" data-scroll-target="#dockerfile-tips">Dockerfile Tips</a></li>
+  <li><a href="#nix" id="toc-nix" class="nav-link" data-scroll-target="#nix">Nix</a></li>
   <li><a href="#what-readme" id="toc-what-readme" class="nav-link" data-scroll-target="#what-readme">What: README</a></li>
-  <li><a href="#what-computational-environments" id="toc-what-computational-environments" class="nav-link" data-scroll-target="#what-computational-environments">What: Computational Environments</a></li>
   </ul></li>
   <li><a href="#how" id="toc-how" class="nav-link" data-scroll-target="#how">How</a>
   <ul class="collapse">
   <li><a href="#how-and-where-testing-your-shared-project" id="toc-how-and-where-testing-your-shared-project" class="nav-link" data-scroll-target="#how-and-where-testing-your-shared-project">How and Where: Testing your shared project</a></li>
-  <li><a href="#review-opportunities" id="toc-review-opportunities" class="nav-link" data-scroll-target="#review-opportunities">Review Opportunities</a></li>
+  <li><a href="#how-review-opportunities" id="toc-how-review-opportunities" class="nav-link" data-scroll-target="#how-review-opportunities">How: Review Opportunities</a></li>
+  <li><a href="#how-and-where-sharing-your-analyses" id="toc-how-and-where-sharing-your-analyses" class="nav-link" data-scroll-target="#how-and-where-sharing-your-analyses">How and Where: Sharing Your Analyses</a></li>
   <li><a href="#where-should-you-share-code" id="toc-where-should-you-share-code" class="nav-link" data-scroll-target="#where-should-you-share-code">Where should you share code?</a></li>
+  <li><a href="#how-data-repositories" id="toc-how-data-repositories" class="nav-link" data-scroll-target="#how-data-repositories">How: Data Repositories</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#definitions" id="toc-definitions" class="nav-link" data-scroll-target="#definitions">Definitions</a></li>
   <li><a href="#outline-old" id="toc-outline-old" class="nav-link" data-scroll-target="#outline-old">Outline (old)</a></li>
   </ul></li>
   </ul>
@@ -227,6 +232,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>How</strong> and where do you make it available?</li>
 </ul>
 </section>
+<section id="who-this-is-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-this-is-for">Who this is for</h2>
+<ul>
+<li>Majority of us want to share analyses, not software</li>
+<li>Leverage some principles from software packaging to share scripts and notebooks</li>
+<li>Software packaging is its own topic</li>
+</ul>
+</section>
 <section id="why" class="level2">
 <h2 class="anchored" data-anchor-id="why">Why?</h2>
 <p><img src="project.png" class="img-fluid"></p>
@@ -239,18 +252,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Others in your field</li>
 </ul>
 </section>
-<section id="why-python-is-a-moving-target" class="level2">
-<h2 class="anchored" data-anchor-id="why-python-is-a-moving-target">Why: Python is a Moving Target</h2>
-<ul>
-<li>Packages may depend on certain versions of Python</li>
-<li>Dependency Hell</li>
-</ul>
-</section>
 <section id="why-reproducibility-matters" class="level2">
 <h2 class="anchored" data-anchor-id="why-reproducibility-matters">Why: Reproducibility Matters</h2>
 <ul>
 <li><a href="https://www.science.org/content/blog-post/duke-cancer-scandal-and-personalized-medicine">Duke Medicine biomarker scandal</a></li>
 <li>Software is an important output</li>
+</ul>
+</section>
+<section id="reproducibility-is-a-spectrum" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility-is-a-spectrum">Reproducibility is a Spectrum</h2>
+<ul>
+<li>Do what you can</li>
+<li>Providing a good framework for running analyses</li>
+</ul>
+</section>
+<section id="why-languages-are-moving-targets" class="level2">
+<h2 class="anchored" data-anchor-id="why-languages-are-moving-targets">Why: Languages are Moving Targets</h2>
+<ul>
+<li>Packages may depend on certain versions of Python/R</li>
+<li>Dependency Hell</li>
+<li>Need a way to “freeze” or “pin” versions used in analysis</li>
 </ul>
 </section>
 <section id="why-reproducibility-is-an-iterative-process" class="level2">
@@ -261,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>rv</code> / <code>uv</code> (in Package management session)</li>
 </ul></li>
-<li>Test out running scripts and notebooks</li>
+<li>Test out running scripts and notebooks as you go</li>
 </ul>
 </section>
 <section id="what-parts-of-a-reproducible-project" class="level1">
@@ -278,6 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><label><input type="checkbox">Notebook(s) / Scripts</label></li>
 <li><label><input type="checkbox">Lockfile</label></li>
 <li><label><input type="checkbox">Data (if small enough)</label></li>
+<li><label><input type="checkbox">README</label></li>
 </ul></li>
 </ul>
 </section>
@@ -322,6 +344,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Example of a reproducible project:</p>
 <p><a href="https://github.com/biodev/beataml2_manuscript">https://github.com/biodev/beataml2_manuscript</a></p>
 </section>
+<section id="what-data-in-a-project" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-in-a-project">What: Data in a Project</h2>
+<pre><code>my_project/                ## Top level
+├── data                   ## Data directory
+│   └── my_data.vcf  </code></pre>
+<ul>
+<li>Genomic and omics data is large
+<ul>
+<li>raw data is not practical for GitHub (100 Mb limit)</li>
+<li>Store raw files in required respositories</li>
+</ul></li>
+<li>Supply intermediate formats used to do the analysis:
+<ul>
+<li>MAF</li>
+<li>VCF</li>
+<li>CSV</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-a-note-about-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-a-note-about-data">What: A Note about data</h2>
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11312195/">Reproducibility in the Genomics Era</a></p>
+<ul>
+<li>Large genomic data - sharing raw data is impractical in a project
+<ul>
+<li>Use Intermediate formats instead, such as VCF files, CSV files</li>
+</ul></li>
+<li>With code, share metadata - list the files you processed
+<ul>
+<li>JSON files from workflows</li>
+<li>Metadata / Experimental Design
+<ul>
+<li>Where does each sample fit into Experimental Design?</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 <section id="reproducible-environments" class="level2">
 <h2 class="anchored" data-anchor-id="reproducible-environments">Reproducible Environments</h2>
 <p>In order of complexity:</p>
@@ -362,49 +421,49 @@ C[Dockerfile]
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>{</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"R"</span><span class="sc">:</span> {</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"4.2.3"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Repositories"</span><span class="sc">:</span> [</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Name"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"URL"</span><span class="sc">:</span> <span class="st">"https://cloud.r-project.org"</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    ]</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  },</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Packages"</span><span class="sc">:</span> {</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"markdown"</span><span class="sc">:</span> {</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"markdown"</span>,</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"1.0"</span>,</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"4584a57f565dd7987d59dda3a02cfb41"</span></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    },</span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mime"</span><span class="sc">:</span> {</span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"mime"</span>,</span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"0.7"</span>,</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"908d95ccbfd1dd274073ef07a7c93934"</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"R"</span><span class="sc">:</span> {</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"4.2.3"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Repositories"</span><span class="sc">:</span> [</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>      {</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Name"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"URL"</span><span class="sc">:</span> <span class="st">"https://cloud.r-project.org"</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  },</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Packages"</span><span class="sc">:</span> {</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"markdown"</span><span class="sc">:</span> {</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"markdown"</span>,</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"1.0"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"4584a57f565dd7987d59dda3a02cfb41"</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">"mime"</span><span class="sc">:</span> {</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"mime"</span>,</span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"0.7"</span>,</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"908d95ccbfd1dd274073ef07a7c93934"</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>anyio<span class="op">==</span><span class="fl">4.11.0</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>appnope<span class="op">==</span><span class="fl">0.1.4</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>argon2<span class="op">-</span>cffi<span class="op">==</span><span class="fl">25.1.0</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>argon2<span class="op">-</span>cffi<span class="op">-</span>bindings<span class="op">==</span><span class="fl">25.1.0</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>arrow<span class="op">==</span><span class="fl">1.3.0</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>asttokens<span class="op">==</span><span class="fl">3.0.0</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span><span class="op">-</span>lru<span class="op">==</span><span class="fl">2.0.5</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>attrs<span class="op">==</span><span class="fl">25.3.0</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>babel<span class="op">==</span><span class="fl">2.17.0</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>beautifulsoup4<span class="op">==</span><span class="fl">4.13.5</span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>bleach<span class="op">==</span><span class="fl">6.2.0</span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>certifi<span class="op">==</span><span class="fl">2025.8.3</span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>cffi<span class="op">==</span><span class="fl">2.0.0</span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>[...]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>anyio<span class="op">==</span><span class="fl">4.11.0</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>appnope<span class="op">==</span><span class="fl">0.1.4</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>argon2<span class="op">-</span>cffi<span class="op">==</span><span class="fl">25.1.0</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>argon2<span class="op">-</span>cffi<span class="op">-</span>bindings<span class="op">==</span><span class="fl">25.1.0</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>arrow<span class="op">==</span><span class="fl">1.3.0</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>asttokens<span class="op">==</span><span class="fl">3.0.0</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="cf">async</span><span class="op">-</span>lru<span class="op">==</span><span class="fl">2.0.5</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>attrs<span class="op">==</span><span class="fl">25.3.0</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>babel<span class="op">==</span><span class="fl">2.17.0</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>beautifulsoup4<span class="op">==</span><span class="fl">4.13.5</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>bleach<span class="op">==</span><span class="fl">6.2.0</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>certifi<span class="op">==</span><span class="fl">2025.8.3</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>cffi<span class="op">==</span><span class="fl">2.0.0</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>[...]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -412,57 +471,76 @@ C[Dockerfile]
 <section id="what-reproducing-environment-from-lockfile" class="level2">
 <h2 class="anchored" data-anchor-id="what-reproducing-environment-from-lockfile">What: Reproducing environment from lockfile</h2>
 <p>Give zipped folder to someone else or host on github</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>venv</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>venv</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
 </section>
 <section id="what-making-a-lockfile-from-your-current-project" class="level2">
 <h2 class="anchored" data-anchor-id="what-making-a-lockfile-from-your-current-project">What: Making a Lockfile from your current project</h2>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    A[Python Project] --"pip freeze"--&gt; B["requirements.txt"]
-</pre>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> session<span class="op">-</span>info <span class="im">as</span> si</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># put this at the end of your notebook</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Install the session-info module:</li>
+</ul>
 </div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">graph LR
-    A[R Project] --"renv::snapshot()"--&gt; B["renv.lock"]
-</pre>
-</div>
-<p></p></figure><p></p>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Can use the <code>renv</code> package to generate a current list of packages</li>
+<li>Does not require a virtual environment to be initialized</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
 <section id="why-not-conda" class="level2">
 <h2 class="anchored" data-anchor-id="why-not-conda">Why not Conda?</h2>
-<p>Anaconda is charging institutions for using their forges</p>
+<p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
+<p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
 </section>
-<section id="binder-ready-repository" class="level2">
-<h2 class="anchored" data-anchor-id="binder-ready-repository">Binder Ready Repository</h2>
-<p>A special way to Share your analysis</p>
+<section id="what-binder-ready-repository" class="level2">
+<h2 class="anchored" data-anchor-id="what-binder-ready-repository">What: Binder Ready Repository</h2>
+<p>A special way to share your analysis</p>
 <ul>
 <li>Put your project on GitHub</li>
 <li>Can plug your repository link into <code>mybinder.org</code></li>
-<li>Generates JupyterLab / RStudio / Shiny Server</li>
-<li>Uses <code>requirements.txt</code> (Python) or <code>install.R</code> (R) or Dockerfiles</li>
+<li>Generates JupyterLab / RStudio / Shiny Server instance</li>
 </ul>
 </section>
-<section id="binder.org" class="level2">
-<h2 class="anchored" data-anchor-id="binder.org">Binder.org</h2>
+<section id="what-binder.org" class="level2">
+<h2 class="anchored" data-anchor-id="what-binder.org">What: Binder.org</h2>
+<p><img src="binder.jpg" class="img-fluid"></p>
+</section>
+<section id="how-does-binder-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-does-binder-work">How does Binder work?</h2>
+<ul>
+<li>Uses <code>requirements.txt</code> (Python) or <code>install.R</code> (R) or Dockerfiles in your repository</li>
+<li>Installs relevant packages</li>
+<li>Launches your analysis in a container (Dockerizes your analysis)</li>
+</ul>
+</section>
+<section id="some-cons-about-binder" class="level2">
+<h2 class="anchored" data-anchor-id="some-cons-about-binder">Some Cons about Binder</h2>
+<ul>
+<li>Currently limited to 1 Gb of memory for an instance</li>
+<li></li>
+</ul>
 </section>
 <section id="dockerfile" class="level2">
 <h2 class="anchored" data-anchor-id="dockerfile">Dockerfile</h2>
@@ -470,103 +548,9 @@ C[Dockerfile]
 <p>A precise list of instructions to install your computational environment.</p>
 <p>More useful if you are distributing software.</p>
 </section>
-<section id="what-data-in-a-project" class="level2">
-<h2 class="anchored" data-anchor-id="what-data-in-a-project">What: Data in a Project</h2>
-<pre><code>my_project/                ## Top level
-├── data                   ## Data directory
-│   └── my_data.vcf  </code></pre>
+<section id="dockerfile-tips" class="level2">
+<h2 class="anchored" data-anchor-id="dockerfile-tips">Dockerfile Tips</h2>
 <ul>
-<li>Genomic and omics data is large
-<ul>
-<li>raw data is not practical for GitHub (100 Mb limit)</li>
-<li>Store raw files in required respositories</li>
-</ul></li>
-<li>Supply intermediate formats used to do the analysis:
-<ul>
-<li>MAF</li>
-<li>VCF</li>
-<li>CSV</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-a-note-about-data" class="level2">
-<h2 class="anchored" data-anchor-id="what-a-note-about-data">What: A Note about data</h2>
-<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11312195/">Reproducibility in the Genomics Era</a></p>
-<ul>
-<li>Large genomic data - sharing raw data is impractical in a project
-<ul>
-<li>Use Intermediate formats instead, such as VCF files, CSV files</li>
-</ul></li>
-<li>Data repositories
-<ul>
-<li>Open Science Framework</li>
-<li>Required databases (dbGAP)</li>
-<li>Be aware that you will need to provide metadata
-<ul>
-<li>Experimental design</li>
-</ul></li>
-</ul></li>
-<li>With code, share File Manifests - list the files you processed
-<ul>
-<li>JSON files from workflows</li>
-<li>Metadata / Experimental Design
-<ul>
-<li>Where does each sample fit into Experimental Design?</li>
-</ul></li>
-</ul></li>
-<li>Focus on shareable formats</li>
-</ul>
-</section>
-<section id="section" class="level2">
-<h2 class="anchored" data-anchor-id="section"></h2>
-<ul>
-<li>Genomic Processing (not covered today)
-<ul>
-<li>Accession Number for your Dataset</li>
-<li>List of files processed in workflow</li>
-<li>WDL or Nextflow workflow file</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-readme" class="level2">
-<h2 class="anchored" data-anchor-id="what-readme">What: README</h2>
-<pre><code>my_project/                ## Top level
-└── README.md</code></pre>
-<p>![[Pasted image 20251219130456.png]]</p>
-<ul>
-<li>First thing that people will see
-<ul>
-<li>https://github.com/biodev/HNSCC_Notebook</li>
-</ul></li>
-<li>Document the basic workflow of processing
-<ul>
-<li>How does the data come together in the analysis?</li>
-</ul></li>
-</ul>
-</section>
-<section id="what-computational-environments" class="level2">
-<h2 class="anchored" data-anchor-id="what-computational-environments">What: Computational Environments</h2>
-<p>![[image 1.png]]</p>
-<ul>
-<li>Bare minimum:
-<ul>
-<li>Lockfiles
-<ul>
-<li><code>requirements.txt</code> Python
-<ul>
-<li><code>pip freeze &gt; requirements.txt</code></li>
-</ul></li>
-<li><code>renv.lock</code> R
-<ul>
-<li><code>renv::snapshot()</code> to generate <code>renv.lock</code> file</li>
-<li><code>rv migrate renv</code> to move to <code>rv</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Docker Containers
-<ul>
-<li>Docker Q&amp;A session</li>
-</ul></li>
 <li>Don’t try to create Dockerfiles from scratch
 <ul>
 <li>Community Images: BioC, Rocker Project, WILDS Docker Library</li>
@@ -575,9 +559,32 @@ C[Dockerfile]
 <li>https://repo2docker.readthedocs.io/en/latest/configuration/#config-files</li>
 </ul></li>
 </ul></li>
-<li>Launch on BinderHub
+</ul>
+</section>
+<section id="nix" class="level2">
+<h2 class="anchored" data-anchor-id="nix">Nix</h2>
+<ul>
+<li>Currently investigating Nix as a language agnostic reproducibility framework</li>
+</ul>
+</section>
+<section id="what-readme" class="level2">
+<h2 class="anchored" data-anchor-id="what-readme">What: README</h2>
+<pre><code>my_project/                ## Top level
+└── README.md</code></pre>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="workflow.png" class="img-fluid figure-img"></p>
+<figcaption>workflow.png</figcaption>
+</figure>
+</div>
+<ul>
+<li>First thing that people will see
 <ul>
 <li>https://github.com/biodev/HNSCC_Notebook</li>
+</ul></li>
+<li>Document the basic workflow of processing
+<ul>
+<li>How does the data come together in the analysis?</li>
 </ul></li>
 </ul>
 </section>
@@ -592,8 +599,8 @@ C[Dockerfile]
 <li>If making binder ready: test the repository on Binder</li>
 </ul>
 </section>
-<section id="review-opportunities" class="level2">
-<h2 class="anchored" data-anchor-id="review-opportunities">Review Opportunities</h2>
+<section id="how-review-opportunities" class="level2">
+<h2 class="anchored" data-anchor-id="how-review-opportunities">How: Review Opportunities</h2>
 <ul>
 <li>Review Opportunities
 <ul>
@@ -602,9 +609,14 @@ C[Dockerfile]
 <li>WILDS WDL Library</li>
 <li>WILDS Docker Library (?)
 <ul>
-<li>If you’re making a package ## How and Where: Sharing Your Analyses</li>
+<li>If you’re making a package</li>
 </ul></li>
 </ul></li>
+</ul>
+</section>
+<section id="how-and-where-sharing-your-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="how-and-where-sharing-your-analyses">How and Where: Sharing Your Analyses</h2>
+<ul>
 <li>GitHub (for code)</li>
 <li>Open Science Framework (for code + data)</li>
 <li>Field specific databases</li>
@@ -621,6 +633,24 @@ C[Dockerfile]
 </ul>
 <p>Be aware of file size limitations!</p>
 </section>
+<section id="how-data-repositories" class="level2">
+<h2 class="anchored" data-anchor-id="how-data-repositories">How: Data Repositories</h2>
+<ul>
+<li>Data repositories
+<ul>
+<li>Open Science Framework</li>
+<li>Required databases (dbGAP)</li>
+<li>Be aware that you will need to provide metadata
+<ul>
+<li>Experimental design</li>
+</ul></li>
+<li>Be careful when sharing human subjects data
+<ul>
+<li>If unsure, schedule a Data Governance House Call</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <ul>
@@ -633,60 +663,6 @@ C[Dockerfile]
 <li>https://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines</li>
 <li>https://binderhub.readthedocs.io/en/latest/overview.html</li>
 </ul>
-</section>
-<section id="definitions" class="level2">
-<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Freire framework</th>
-<th>Definitions of reproducibilty</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Repeatable</td>
-<td>Reproducible (same data, same analysis)</td>
-<td>GitHub Repo or OSF project</td>
-</tr>
-<tr class="even">
-<td>Re-runnable</td>
-<td>Robust &amp; Replicable (same code, different data/analysis/parameters)</td>
-<td>Documentation, functions</td>
-</tr>
-<tr class="odd">
-<td>Portable</td>
-<td><em>Not considered</em>&nbsp;(same code/data, different environment)</td>
-<td>requirements.txt, Dockerfile</td>
-</tr>
-<tr class="even">
-<td>Extendable</td>
-<td>(partly) Generalisable</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>Modifiable</td>
-<td>(partly) Generalisable</td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
 <p>Source: https://book.the-turing-way.org/reproducible-research/code-reuse</p>
 </section>
 <section id="outline-old" class="level2">

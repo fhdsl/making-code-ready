@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Making Code Ready"
@@ -7,6 +8,8 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - href: making_code_ready.qmd
+        text: Workshop
       - about.qmd
 
 format:

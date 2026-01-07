@@ -1,17 +1,8 @@
 ---
-title: "Making Code Ready"
+title: "Making Code Ready for Publication"
 ---
 
 # Making Code Ready for Publication
-
-Created: May 30, 2025 3:47 PM
-Authors: @Ted Laderas 
-Level: Intermediate
-Prerequisites: Intro to GitHub
-Season Offered: S9
-Status: In progress
-Taxonomy: Transparent Research
-Teaching Format: Workshop
 
 ## Description
 
@@ -25,6 +16,12 @@ In this workshop, we will discuss ways to share analysis code in your publicatio
 - **Explain** what kinds of files in a minimum set to include to share code and analyses in Python and R
 - **Utilize** systems such as [mybinder.org](http://mybinder.org) or GitHub codespaces to make your code runnable from your GitHub repository
 - **Discuss** the benefits of packaging and submitting your code to package repositories such as CRAN or PyPi
+
+## Audience
+
+- Majority of us want to share analyses, not software
+- Leverage some principles from software packaging to share scripts and notebooks
+- Software packaging is its own topic
 
 ## Prerequisite
 
