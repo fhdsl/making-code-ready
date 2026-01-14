@@ -1,17 +1,10 @@
 [
   {
-    "objectID": "making_code_ready.html",
-    "href": "making_code_ready.html",
-    "title": "Making Code Ready for Publication",
-    "section": "",
-    "text": "Why make your code ready for publication?\nWhat do you need to make it ready?\nHow and where do you make it available?"
-  },
-  {
     "objectID": "making_code_ready.html#outline",
     "href": "making_code_ready.html#outline",
     "title": "Making Code Ready for Publication",
-    "section": "",
-    "text": "Why make your code ready for publication?\nWhat do you need to make it ready?\nHow and where do you make it available?"
+    "section": "Outline",
+    "text": "Outline\n\nWhy make your code ready for publication?\nWhat do you need to make it ready?\nHow and where do you make it available?"
   },
   {
     "objectID": "making_code_ready.html#who-this-is-for",
@@ -126,6 +119,20 @@
     "text": "Lockfile Examples\n\nRPython\n\n\n{\n  \"R\": {\n    \"Version\": \"4.2.3\",\n    \"Repositories\": [\n      {\n        \"Name\": \"CRAN\",\n        \"URL\": \"https://cloud.r-project.org\"\n      }\n    ]\n  },\n  \"Packages\": {\n    \"markdown\": {\n      \"Package\": \"markdown\",\n      \"Version\": \"1.0\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"4584a57f565dd7987d59dda3a02cfb41\"\n    },\n    \"mime\": {\n      \"Package\": \"mime\",\n      \"Version\": \"0.7\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"908d95ccbfd1dd274073ef07a7c93934\"\n    }\n  }\n}\n\n\nanyio==4.11.0\nappnope==0.1.4\nargon2-cffi==25.1.0\nargon2-cffi-bindings==25.1.0\narrow==1.3.0\nasttokens==3.0.0\nasync-lru==2.0.5\nattrs==25.3.0\nbabel==2.17.0\nbeautifulsoup4==4.13.5\nbleach==6.2.0\ncertifi==2025.8.3\ncffi==2.0.0\n[...]"
   },
   {
+    "objectID": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
+    "href": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Making a Lockfile from your current project",
+    "text": "What: Making a Lockfile from your current project\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
+  },
+  {
+    "objectID": "making_code_ready.html#exercise-build-a-lockfile",
+    "href": "making_code_ready.html#exercise-build-a-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Build a Lockfile",
+    "text": "Exercise: Build a Lockfile"
+  },
+  {
     "objectID": "making_code_ready.html#what-reproducing-environment-from-lockfile",
     "href": "making_code_ready.html#what-reproducing-environment-from-lockfile",
     "title": "Making Code Ready for Publication",
@@ -133,11 +140,11 @@
     "text": "What: Reproducing environment from lockfile\nGive zipped folder to someone else or host on github\n\nPythonR\n\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
   },
   {
-    "objectID": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
-    "href": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
+    "objectID": "making_code_ready.html#exercise-reproduce-environment-from-lockfile",
+    "href": "making_code_ready.html#exercise-reproduce-environment-from-lockfile",
     "title": "Making Code Ready for Publication",
-    "section": "What: Making a Lockfile from your current project",
-    "text": "What: Making a Lockfile from your current project\n\nPythonR\n\n\nimport session-info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info module:\n\n\n\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
+    "section": "Exercise: reproduce environment from lockfile",
+    "text": "Exercise: reproduce environment from lockfile"
   },
   {
     "objectID": "making_code_ready.html#why-not-conda",
@@ -168,11 +175,25 @@
     "text": "How does Binder work?\n\nUses requirements.txt (Python) or install.R (R) or Dockerfiles in your repository\nInstalls relevant packages\nLaunches your analysis in a container (Dockerizes your analysis)"
   },
   {
+    "objectID": "making_code_ready.html#install.r-using-renv-put-in-your-top-directory",
+    "href": "making_code_ready.html#install.r-using-renv-put-in-your-top-directory",
+    "title": "Making Code Ready for Publication",
+    "section": "install.R using renv (put in your top directory)",
+    "text": "install.R using renv (put in your top directory)\ninstall.packages(\"renv\")\nrenv::restore()"
+  },
+  {
+    "objectID": "making_code_ready.html#exercise-launch-a-binder-repository",
+    "href": "making_code_ready.html#exercise-launch-a-binder-repository",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Launch a Binder Repository",
+    "text": "Exercise: Launch a Binder Repository\n\nGo to mybinder.org\nPut in"
+  },
+  {
     "objectID": "making_code_ready.html#some-cons-about-binder",
     "href": "making_code_ready.html#some-cons-about-binder",
     "title": "Making Code Ready for Publication",
     "section": "Some Cons about Binder",
-    "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance"
+    "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
   },
   {
     "objectID": "making_code_ready.html#dockerfile",
@@ -200,7 +221,7 @@
     "href": "making_code_ready.html#what-readme",
     "title": "Making Code Ready for Publication",
     "section": "What: README",
-    "text": "What: README\nmy_project/                ## Top level\n└── README.md\n\n\n\nworkflow.png\n\n\n\nFirst thing that people will see\n\nhttps://github.com/biodev/HNSCC_Notebook\n\nDocument the basic workflow of processing\n\nHow does the data come together in the analysis?"
+    "text": "What: README\nmy_project/                ## Top level\n└── README.md\n\nworkflow.png\nFirst thing that people will see\n\nhttps://github.com/biodev/HNSCC_Notebook\n\nDocument the basic workflow of processing\n\nHow does the data come together in the analysis?"
   },
   {
     "objectID": "making_code_ready.html#how-and-where-testing-your-shared-project",
