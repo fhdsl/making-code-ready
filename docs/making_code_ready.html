@@ -217,6 +217,12 @@
 <li>Software packaging is its own topic</li>
 </ul>
 </section>
+<section id="it-worked-on-my-machine" class="slide level2">
+<h2>“It worked on my machine”</h2>
+<ul>
+<li>What are some issues that you’ve encountered in sharing your analyses with other people?</li>
+</ul>
+</section>
 <section id="why" class="slide level2">
 <h2>Why?</h2>
 
@@ -236,11 +242,13 @@
 <li>Software is an important output</li>
 </ul>
 </section>
-<section id="reproducibility-is-a-spectrum" class="slide level2">
-<h2>Reproducibility is a Spectrum</h2>
+<section id="why-reproducibility-is-a-spectrum" class="slide level2">
+<h2>Why: Reproducibility is a Spectrum</h2>
 <ul>
 <li>Do what you can</li>
 <li>Providing a good framework for running analyses</li>
+<li>Who is going to look at your code?</li>
+<li>Where are you going to share it?</li>
 </ul>
 </section>
 <section id="why-languages-are-moving-targets" class="slide level2">
@@ -248,7 +256,11 @@
 <ul>
 <li>Packages may depend on certain versions of Python/R</li>
 <li>Dependency Hell</li>
-<li>Need a way to “freeze” or “pin” versions used in analysis</li>
+<li>Need a way to “freeze” or “pin” versions used in analysis
+<ul>
+<li>Language Versions</li>
+<li>Package Versions</li>
+</ul></li>
 </ul>
 </section>
 <section id="why-reproducibility-is-an-iterative-process" class="slide level2">
@@ -267,24 +279,28 @@
 <h1>What: Parts of a Reproducible Project</h1>
 
 </section>
+<section id="reproducible-analyses-are-not-perfect" class="slide level2">
+<h2>Reproducible Analyses are not perfect</h2>
+<ul>
+<li>They only need to be able to run on another machine</li>
+<li>Don’t let perfect be the enemy of good</li>
+</ul>
+</section>
 <section id="what-minimum-information-for-analyses" class="slide level2">
 <h2>What: Minimum Information for Analyses</h2>
 <ul>
-<li>Focus on Data Analysis in R / Python
-<ul>
-<li>Genomic analysis: future workshop?</li>
-</ul></li>
+<li>Focus on Data Analysis in R / Python</li>
 <li>Organize your analysis in a folder and share in a repository
 <ul class="task-list">
-<li><label><input type="checkbox">Notebook(s) / Scripts</label></li>
-<li><label><input type="checkbox">Lockfile</label></li>
-<li><label><input type="checkbox">Data (if small enough)</label></li>
 <li><label><input type="checkbox">README</label></li>
+<li><label><input type="checkbox">Notebook(s) / Scripts</label></li>
+<li><label><input type="checkbox">Data (if small enough)</label></li>
+<li><label><input type="checkbox">Lockfile</label></li>
 </ul></li>
 </ul>
 </section>
-<section id="project-example" class="slide level2">
-<h2>Project Example:</h2>
+<section id="what-project-example" class="slide level2">
+<h2>What: Project Example:</h2>
 <pre><code>my_project/                 ## Top level
 ├── data/                   ## Data directory
 │   └── my_data.vcf  
@@ -295,6 +311,23 @@
 ├── renv.lock               ## R Packages 
 ├── requirements.txt        ## Python Packages
 └── README.md</code></pre>
+<p><a href="https://rstats.wtf/projects" class="uri">https://rstats.wtf/projects</a></p>
+</section>
+<section id="what-readme" class="slide level2">
+<h2>What: README</h2>
+<pre><code>my_project/                ## Top level
+└── README.md</code></pre>
+
+<img data-src="workflow.png" class="r-stretch quarto-figure-center"><p class="caption">workflow.png</p><ul>
+<li>First thing that people will see
+<ul>
+<li>https://github.com/biodev/HNSCC_Notebook</li>
+</ul></li>
+<li>Document the basic workflow of processing
+<ul>
+<li>How does the data come together in the analysis?</li>
+</ul></li>
+</ul>
 </section>
 <section id="what-notebooks-analysis-files" class="slide level2">
 <h2>What: Notebooks / Analysis Files</h2>
@@ -303,7 +336,7 @@
 ├── 02_deseq2_analysis.qmd
 └── 03_visualization.ipynb</code></pre>
 <ul>
-<li>Easiest: place in your root folder</li>
+<li>Easiest: place in your top folder</li>
 <li>Number in order
 <ul>
 <li><code>01_preprocessing.R</code></li>
@@ -317,12 +350,19 @@
 <ul>
 <li>Everything should be runnable from the top folder of the project. Put data in <code>data/</code> folder. Use relative paths from the top project folder:</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>my_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/datafile.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>my_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/datafile.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Ensures portability of project</li>
 </ul>
 <p>Example of a reproducible project:</p>
 <p><a href="https://github.com/biodev/beataml2_manuscript">https://github.com/biodev/beataml2_manuscript</a></p>
+</section>
+<section id="what-know-the-status-of-your-data" class="slide level2">
+<h2>What: Know the status of your data</h2>
+<ul>
+<li>Is your data restricted or regulated for sharing?</li>
+<li>Schedule a <a href="https://centernet.fredhutch.org/u/data-science-lab/data-governance.html">Data Governance House Call</a> if unsure</li>
+</ul>
 </section>
 <section id="what-data-in-a-project" class="slide level2">
 <h2>What: Data in a Project</h2>
@@ -333,9 +373,13 @@
 <li>Genomic and omics data is large
 <ul>
 <li>raw data is not practical for GitHub (100 Mb limit)</li>
-<li>Store raw files in required respositories</li>
+<li>Store raw files in required respositories for your field
+<ul>
+<li>dbGAP</li>
 </ul></li>
-<li>Supply intermediate formats used to do the analysis:
+<li>track what files were processed (manifest)</li>
+</ul></li>
+<li>Supply intermediate formats used to do the analysis, if possible:
 <ul>
 <li>MAF</li>
 <li>VCF</li>
@@ -350,6 +394,7 @@
 <li>Large genomic data - sharing raw data is impractical in a project
 <ul>
 <li>Use Intermediate formats instead, such as VCF files, CSV files</li>
+<li>Use <code>.gitignore</code> file to exclude large files</li>
 </ul></li>
 <li>With code, share metadata - list the files you processed
 <ul>
@@ -361,8 +406,8 @@
 </ul></li>
 </ul>
 </section>
-<section id="reproducible-environments" class="slide level2">
-<h2>Reproducible Environments</h2>
+<section id="what-reproducible-environments" class="slide level2">
+<h2>What: Reproducible Environments</h2>
 <p>In order of complexity:</p>
 <div class="cell" data-reveal="true" data-layout-align="default">
 <div class="cell-output-display">
@@ -401,49 +446,49 @@ C[Dockerfile]
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">R</a></li><li><a href="#tabset-1-2">Python</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>{</span>
-<span id="cb6-2"><a></a>  <span class="st">"R"</span><span class="sc">:</span> {</span>
-<span id="cb6-3"><a></a>    <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"4.2.3"</span>,</span>
-<span id="cb6-4"><a></a>    <span class="st">"Repositories"</span><span class="sc">:</span> [</span>
-<span id="cb6-5"><a></a>      {</span>
-<span id="cb6-6"><a></a>        <span class="st">"Name"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb6-7"><a></a>        <span class="st">"URL"</span><span class="sc">:</span> <span class="st">"https://cloud.r-project.org"</span></span>
-<span id="cb6-8"><a></a>      }</span>
-<span id="cb6-9"><a></a>    ]</span>
-<span id="cb6-10"><a></a>  },</span>
-<span id="cb6-11"><a></a>  <span class="st">"Packages"</span><span class="sc">:</span> {</span>
-<span id="cb6-12"><a></a>    <span class="st">"markdown"</span><span class="sc">:</span> {</span>
-<span id="cb6-13"><a></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"markdown"</span>,</span>
-<span id="cb6-14"><a></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"1.0"</span>,</span>
-<span id="cb6-15"><a></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
-<span id="cb6-16"><a></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb6-17"><a></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"4584a57f565dd7987d59dda3a02cfb41"</span></span>
-<span id="cb6-18"><a></a>    },</span>
-<span id="cb6-19"><a></a>    <span class="st">"mime"</span><span class="sc">:</span> {</span>
-<span id="cb6-20"><a></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"mime"</span>,</span>
-<span id="cb6-21"><a></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"0.7"</span>,</span>
-<span id="cb6-22"><a></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
-<span id="cb6-23"><a></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
-<span id="cb6-24"><a></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"908d95ccbfd1dd274073ef07a7c93934"</span></span>
-<span id="cb6-25"><a></a>    }</span>
-<span id="cb6-26"><a></a>  }</span>
-<span id="cb6-27"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>{</span>
+<span id="cb7-2"><a></a>  <span class="st">"R"</span><span class="sc">:</span> {</span>
+<span id="cb7-3"><a></a>    <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"4.2.3"</span>,</span>
+<span id="cb7-4"><a></a>    <span class="st">"Repositories"</span><span class="sc">:</span> [</span>
+<span id="cb7-5"><a></a>      {</span>
+<span id="cb7-6"><a></a>        <span class="st">"Name"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb7-7"><a></a>        <span class="st">"URL"</span><span class="sc">:</span> <span class="st">"https://cloud.r-project.org"</span></span>
+<span id="cb7-8"><a></a>      }</span>
+<span id="cb7-9"><a></a>    ]</span>
+<span id="cb7-10"><a></a>  },</span>
+<span id="cb7-11"><a></a>  <span class="st">"Packages"</span><span class="sc">:</span> {</span>
+<span id="cb7-12"><a></a>    <span class="st">"markdown"</span><span class="sc">:</span> {</span>
+<span id="cb7-13"><a></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"markdown"</span>,</span>
+<span id="cb7-14"><a></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"1.0"</span>,</span>
+<span id="cb7-15"><a></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
+<span id="cb7-16"><a></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb7-17"><a></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"4584a57f565dd7987d59dda3a02cfb41"</span></span>
+<span id="cb7-18"><a></a>    },</span>
+<span id="cb7-19"><a></a>    <span class="st">"mime"</span><span class="sc">:</span> {</span>
+<span id="cb7-20"><a></a>      <span class="st">"Package"</span><span class="sc">:</span> <span class="st">"mime"</span>,</span>
+<span id="cb7-21"><a></a>      <span class="st">"Version"</span><span class="sc">:</span> <span class="st">"0.7"</span>,</span>
+<span id="cb7-22"><a></a>      <span class="st">"Source"</span><span class="sc">:</span> <span class="st">"Repository"</span>,</span>
+<span id="cb7-23"><a></a>      <span class="st">"Repository"</span><span class="sc">:</span> <span class="st">"CRAN"</span>,</span>
+<span id="cb7-24"><a></a>      <span class="st">"Hash"</span><span class="sc">:</span> <span class="st">"908d95ccbfd1dd274073ef07a7c93934"</span></span>
+<span id="cb7-25"><a></a>    }</span>
+<span id="cb7-26"><a></a>  }</span>
+<span id="cb7-27"><a></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-1-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a></a>anyio<span class="op">==</span><span class="fl">4.11.0</span></span>
-<span id="cb7-2"><a></a>appnope<span class="op">==</span><span class="fl">0.1.4</span></span>
-<span id="cb7-3"><a></a>argon2<span class="op">-</span>cffi<span class="op">==</span><span class="fl">25.1.0</span></span>
-<span id="cb7-4"><a></a>argon2<span class="op">-</span>cffi<span class="op">-</span>bindings<span class="op">==</span><span class="fl">25.1.0</span></span>
-<span id="cb7-5"><a></a>arrow<span class="op">==</span><span class="fl">1.3.0</span></span>
-<span id="cb7-6"><a></a>asttokens<span class="op">==</span><span class="fl">3.0.0</span></span>
-<span id="cb7-7"><a></a><span class="cf">async</span><span class="op">-</span>lru<span class="op">==</span><span class="fl">2.0.5</span></span>
-<span id="cb7-8"><a></a>attrs<span class="op">==</span><span class="fl">25.3.0</span></span>
-<span id="cb7-9"><a></a>babel<span class="op">==</span><span class="fl">2.17.0</span></span>
-<span id="cb7-10"><a></a>beautifulsoup4<span class="op">==</span><span class="fl">4.13.5</span></span>
-<span id="cb7-11"><a></a>bleach<span class="op">==</span><span class="fl">6.2.0</span></span>
-<span id="cb7-12"><a></a>certifi<span class="op">==</span><span class="fl">2025.8.3</span></span>
-<span id="cb7-13"><a></a>cffi<span class="op">==</span><span class="fl">2.0.0</span></span>
-<span id="cb7-14"><a></a>[...]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a>anyio<span class="op">==</span><span class="fl">4.11.0</span></span>
+<span id="cb8-2"><a></a>appnope<span class="op">==</span><span class="fl">0.1.4</span></span>
+<span id="cb8-3"><a></a>argon2<span class="op">-</span>cffi<span class="op">==</span><span class="fl">25.1.0</span></span>
+<span id="cb8-4"><a></a>argon2<span class="op">-</span>cffi<span class="op">-</span>bindings<span class="op">==</span><span class="fl">25.1.0</span></span>
+<span id="cb8-5"><a></a>arrow<span class="op">==</span><span class="fl">1.3.0</span></span>
+<span id="cb8-6"><a></a>asttokens<span class="op">==</span><span class="fl">3.0.0</span></span>
+<span id="cb8-7"><a></a><span class="cf">async</span><span class="op">-</span>lru<span class="op">==</span><span class="fl">2.0.5</span></span>
+<span id="cb8-8"><a></a>attrs<span class="op">==</span><span class="fl">25.3.0</span></span>
+<span id="cb8-9"><a></a>babel<span class="op">==</span><span class="fl">2.17.0</span></span>
+<span id="cb8-10"><a></a>beautifulsoup4<span class="op">==</span><span class="fl">4.13.5</span></span>
+<span id="cb8-11"><a></a>bleach<span class="op">==</span><span class="fl">6.2.0</span></span>
+<span id="cb8-12"><a></a>certifi<span class="op">==</span><span class="fl">2025.8.3</span></span>
+<span id="cb8-13"><a></a>cffi<span class="op">==</span><span class="fl">2.0.0</span></span>
+<span id="cb8-14"><a></a>[...]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -454,18 +499,18 @@ C[Dockerfile]
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="co"># pip install session-info</span></span>
-<span id="cb8-2"><a></a><span class="co"># uv add session-info</span></span>
-<span id="cb8-3"><a></a><span class="im">import</span> session_info <span class="im">as</span> si</span>
-<span id="cb8-4"><a></a><span class="co"># put this at the end of your notebook</span></span>
-<span id="cb8-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># pip install session-info</span></span>
+<span id="cb9-2"><a></a><span class="co"># uv add session-info</span></span>
+<span id="cb9-3"><a></a><span class="im">import</span> session_info <span class="im">as</span> si</span>
+<span id="cb9-4"><a></a><span class="co"># put this at the end of your notebook</span></span>
+<span id="cb9-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Install the <a href="https://pypi.org/project/session-info/">session-info package</a></li>
 </ul>
 </div>
 <div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># install.packages("renv")</span></span>
-<span id="cb9-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># install.packages("renv")</span></span>
+<span id="cb10-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Can use the <code>renv</code> package to generate a current list of packages</li>
 <li>Does not require a virtual environment to be initialized</li>
@@ -474,8 +519,8 @@ C[Dockerfile]
 </div>
 </div>
 </section>
-<section id="exercise-build-a-lockfile" class="slide level2">
-<h2>Exercise: Build a Lockfile</h2>
+<section id="exercise-look-at-a-lockfile" class="slide level2">
+<h2>Exercise: Look at a lockfile</h2>
 </section>
 <section id="what-reproducing-environment-from-lockfile" class="slide level2">
 <h2>What: Reproducing environment from lockfile</h2>
@@ -484,19 +529,20 @@ C[Dockerfile]
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Python</a></li><li><a href="#tabset-3-2">R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a></a>venv</span>
-<span id="cb10-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
-<span id="cb10-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>venv</span>
+<span id="cb11-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
+<span id="cb11-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-3-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb11-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb12-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
 </section>
 <section id="exercise-reproduce-environment-from-lockfile" class="slide level2">
 <h2>Exercise: reproduce environment from lockfile</h2>
+<p><a href="./restore_activity.html">Exercise 2</a></p>
 </section>
 <section id="why-not-conda" class="slide level2">
 <h2>Why not Conda?</h2>
@@ -519,15 +565,15 @@ C[Dockerfile]
 <section id="how-does-binder-work" class="slide level2">
 <h2>How does Binder work?</h2>
 <ul>
-<li>Uses <code>requirements.txt</code> (Python) or <code>install.R</code> (R) or Dockerfiles in your repository</li>
-<li>Installs relevant packages</li>
 <li>Launches your analysis in a container (Dockerizes your analysis)</li>
+<li>Uses <code>requirements.txt</code> (Python), <code>environment.yml</code> (Conda) or <code>install.R</code> (R) or Dockerfiles in your repository</li>
+<li>Installs relevant packages and dependencies into a docker image</li>
 </ul>
 </section>
 <section id="install.r-using-renv-put-in-your-top-directory" class="slide level2">
 <h2><code>install.R</code> using <code>renv</code> (put in your top directory)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb12-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb13-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="exercise-launch-a-binder-repository" class="slide level2">
 <h2>Exercise: Launch a Binder Repository</h2>
@@ -541,47 +587,6 @@ C[Dockerfile]
 <ul>
 <li>Currently limited to 1 Gb of memory for an instance</li>
 <li>If your image files aren’t used at least once a week, they get deleted</li>
-</ul>
-</section>
-<section id="dockerfile" class="slide level2">
-<h2>Dockerfile</h2>
-<p>Takes a lot of work, builds on the work of others</p>
-<p>A precise list of instructions to install your computational environment.</p>
-<p>More useful if you are distributing software.</p>
-</section>
-<section id="dockerfile-tips" class="slide level2">
-<h2>Dockerfile Tips</h2>
-<ul>
-<li>Don’t try to create Dockerfiles from scratch
-<ul>
-<li>Community Images: BioC, Rocker Project, WILDS Docker Library</li>
-<li>Use https://repo2docker.readthedocs.io/en/latest/
-<ul>
-<li>https://repo2docker.readthedocs.io/en/latest/configuration/#config-files</li>
-</ul></li>
-</ul></li>
-</ul>
-</section>
-<section id="nix" class="slide level2">
-<h2>Nix</h2>
-<ul>
-<li>Currently investigating Nix as a language agnostic reproducibility framework</li>
-</ul>
-</section>
-<section id="what-readme" class="slide level2">
-<h2>What: README</h2>
-<pre><code>my_project/                ## Top level
-└── README.md</code></pre>
-
-<img data-src="workflow.png" class="r-stretch quarto-figure-center"><p class="caption">workflow.png</p><ul>
-<li>First thing that people will see
-<ul>
-<li>https://github.com/biodev/HNSCC_Notebook</li>
-</ul></li>
-<li>Document the basic workflow of processing
-<ul>
-<li>How does the data come together in the analysis?</li>
-</ul></li>
 </ul>
 </section></section>
 <section>
@@ -610,6 +615,7 @@ C[Dockerfile]
 <li>If you’re making a package</li>
 </ul></li>
 </ul></li>
+<li>WILDS Collaborative Projects</li>
 </ul>
 </section>
 <section id="how-and-where-sharing-your-analyses" class="slide level2">
@@ -648,6 +654,61 @@ C[Dockerfile]
 </ul></li>
 </ul></li>
 </ul>
+</section></section>
+<section>
+<section id="advanced-topics" class="title-slide slide level1 center">
+<h1>Advanced Topics</h1>
+
+</section>
+<section id="targets-and-workflow-builders" class="slide level2">
+<h2><code>{targets}</code> and Workflow Builders</h2>
+<ul>
+<li>Another layer of complexity</li>
+<li>Lets you chain together notebooks</li>
+<li>A lot like snakemake</li>
+</ul>
+<p>Targets example: <a href="https://github.com/biodev/hnscc_manuscript" class="uri">https://github.com/biodev/hnscc_manuscript</a></p>
+</section>
+<section id="dockerfile" class="slide level2">
+<h2>Dockerfile</h2>
+<ul>
+<li>A precise list of instructions to install your computational environment</li>
+<li>More useful if you are distributing software.</li>
+<li>More portable across systems other than Binder</li>
+<li>Takes a lot of work, builds on the work of others</li>
+</ul>
+</section>
+<section id="dockerfile-example" class="slide level2">
+<h2>Dockerfile example</h2>
+<pre><code>FROM debian:bookworm-slim AS builder
+
+RUN Rscript 
+</code></pre>
+</section>
+<section id="there-will-be-a-lot-of-crying" class="slide level2">
+<h2>There will be a lot of crying</h2>
+<ul>
+<li>Dockerfiles are a lot of work</li>
+</ul>
+</section>
+<section id="dockerfile-tips" class="slide level2">
+<h2>Dockerfile Tips</h2>
+<ul>
+<li>Don’t try to create Dockerfiles from scratch
+<ul>
+<li>Community Images: BioC, Rocker Project, WILDS Docker Library</li>
+<li>Use https://repo2docker.readthedocs.io/en/latest/
+<ul>
+<li>https://repo2docker.readthedocs.io/en/latest/configuration/#config-files</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="nix" class="slide level2">
+<h2>Nix</h2>
+<ul>
+<li>Currently investigating Nix as a language agnostic reproducibility framework</li>
+</ul>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
@@ -662,34 +723,6 @@ C[Dockerfile]
 <li>https://binderhub.readthedocs.io/en/latest/overview.html</li>
 </ul>
 <p>Source: https://book.the-turing-way.org/reproducible-research/code-reuse</p>
-</section>
-<section id="outline-old" class="slide level2">
-<h2>Outline (old)</h2>
-<ul>
-<li>Defining reproducibility
-<ul>
-<li>https://osf.io/numa5 reproducible paper checklist</li>
-<li><a href="https://datascience.nih.gov/tools-and-analytics/best-practices-for-sharing-research-software-faq#:~:text=Making%20software%20and%20code%20%E2%80%9Copen,accessible%20repository%20with%20version%20control">NIH Best Practices for Sharing Software</a></li>
-</ul></li>
-<li>Repeatable
-<ul>
-<li>The GitHub Ecosystem + Zenodo</li>
-<li>Open Science Framework</li>
-</ul></li>
-<li>Re-runnable
-<ul>
-<li>Documentation</li>
-<li>Functions</li>
-<li>Packaging</li>
-</ul></li>
-<li>Portable
-<ul>
-<li>Containerization</li>
-<li>Starting points</li>
-<li>BinderHub</li>
-<li>GitHub Codespaces</li>
-</ul></li>
-</ul>
 
 
 </section></section>
