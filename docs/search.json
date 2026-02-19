@@ -1,276 +1,325 @@
 [
   {
-    "objectID": "making_code_ready.html#outline",
-    "href": "making_code_ready.html#outline",
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "restore_activity.html",
+    "href": "restore_activity.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "In Posit Cloud Workspace:\nNew Project &gt;&gt; New Project From Git Repository\nFill out with https://github.com/fhdsl/making_code_ready_example/\nHit OK, Wait for project to create\nOpen up 01_first_step.qmd and try to render it\nIn the R console, try\n\n\nrenv::restore()\n\n\nThen try rendering 01_first_step.qmd"
+  },
+  {
+    "objectID": "slides.html#outline",
+    "href": "slides.html#outline",
     "title": "Making Code Ready for Publication",
     "section": "Outline",
     "text": "Outline\n\nWhy make your code ready for publication?\nWhat do you need to make it ready?\nHow and where do you make it available?"
   },
   {
-    "objectID": "making_code_ready.html#who-this-is-for",
-    "href": "making_code_ready.html#who-this-is-for",
+    "objectID": "slides.html#who-this-is-for",
+    "href": "slides.html#who-this-is-for",
     "title": "Making Code Ready for Publication",
     "section": "Who this is for",
     "text": "Who this is for\n\nMajority of us want to share analyses, not software\nLeverage some principles from software packaging to share scripts and notebooks\nSoftware packaging is its own topic"
   },
   {
-    "objectID": "making_code_ready.html#why",
-    "href": "making_code_ready.html#why",
+    "objectID": "slides.html#it-worked-on-my-machine",
+    "href": "slides.html#it-worked-on-my-machine",
+    "title": "Making Code Ready for Publication",
+    "section": "“It worked on my machine”",
+    "text": "“It worked on my machine”\n\nWhat are some issues that you’ve encountered in sharing your analyses with other people?"
+  },
+  {
+    "objectID": "slides.html#why",
+    "href": "slides.html#why",
     "title": "Making Code Ready for Publication",
     "section": "Why?",
     "text": "Why?"
   },
   {
-    "objectID": "making_code_ready.html#why-documentation-is-important",
-    "href": "making_code_ready.html#why-documentation-is-important",
+    "objectID": "slides.html#why-documentation-is-important",
+    "href": "slides.html#why-documentation-is-important",
     "title": "Making Code Ready for Publication",
     "section": "Why: Documentation is Important",
     "text": "Why: Documentation is Important\n\nDo it for Future You\nOthers in your lab\nOthers in your field"
   },
   {
-    "objectID": "making_code_ready.html#why-reproducibility-matters",
-    "href": "making_code_ready.html#why-reproducibility-matters",
+    "objectID": "slides.html#why-reproducibility-matters",
+    "href": "slides.html#why-reproducibility-matters",
     "title": "Making Code Ready for Publication",
     "section": "Why: Reproducibility Matters",
     "text": "Why: Reproducibility Matters\n\nDuke Medicine biomarker scandal\nSoftware is an important output"
   },
   {
-    "objectID": "making_code_ready.html#reproducibility-is-a-spectrum",
-    "href": "making_code_ready.html#reproducibility-is-a-spectrum",
+    "objectID": "slides.html#why-reproducibility-is-a-spectrum",
+    "href": "slides.html#why-reproducibility-is-a-spectrum",
     "title": "Making Code Ready for Publication",
-    "section": "Reproducibility is a Spectrum",
-    "text": "Reproducibility is a Spectrum\n\nDo what you can\nProviding a good framework for running analyses"
+    "section": "Why: Reproducibility is a Spectrum",
+    "text": "Why: Reproducibility is a Spectrum\n\nDo what you can\nProviding a good framework for running analyses\nWho is going to look at your code?\nWhere are you going to share it?"
   },
   {
-    "objectID": "making_code_ready.html#why-languages-are-moving-targets",
-    "href": "making_code_ready.html#why-languages-are-moving-targets",
+    "objectID": "slides.html#why-languages-are-moving-targets",
+    "href": "slides.html#why-languages-are-moving-targets",
     "title": "Making Code Ready for Publication",
     "section": "Why: Languages are Moving Targets",
     "text": "Why: Languages are Moving Targets\n\nPackages may depend on certain versions of Python/R\nDependency Hell\nNeed a way to “freeze” or “pin” versions used in analysis\n\nLanguage Versions\nPackage Versions"
   },
   {
-    "objectID": "making_code_ready.html#why-reproducibility-is-an-iterative-process",
-    "href": "making_code_ready.html#why-reproducibility-is-an-iterative-process",
+    "objectID": "slides.html#why-reproducibility-is-an-iterative-process",
+    "href": "slides.html#why-reproducibility-is-an-iterative-process",
     "title": "Making Code Ready for Publication",
     "section": "Why: Reproducibility is an iterative process",
     "text": "Why: Reproducibility is an iterative process\n\nWhen possible, start from the beginning\nUse package management and environments from the start\n\nrv / uv (in Package management session)\n\nTest out running scripts and notebooks as you go"
   },
   {
-    "objectID": "making_code_ready.html#what-minimum-information-for-analyses",
-    "href": "making_code_ready.html#what-minimum-information-for-analyses",
+    "objectID": "slides.html#reproducible-analyses-are-not-perfect",
+    "href": "slides.html#reproducible-analyses-are-not-perfect",
+    "title": "Making Code Ready for Publication",
+    "section": "Reproducible Analyses are not perfect",
+    "text": "Reproducible Analyses are not perfect\n\nThey only need to be able to run on another machine\nDon’t let perfect be the enemy of good"
+  },
+  {
+    "objectID": "slides.html#what-minimum-information-for-analyses",
+    "href": "slides.html#what-minimum-information-for-analyses",
     "title": "Making Code Ready for Publication",
     "section": "What: Minimum Information for Analyses",
     "text": "What: Minimum Information for Analyses\n\nFocus on Data Analysis in R / Python\nOrganize your analysis in a folder and share in a repository\n\nREADME\nNotebook(s) / Scripts\nData (if small enough)\nLockfile"
   },
   {
-    "objectID": "making_code_ready.html#project-example",
-    "href": "making_code_ready.html#project-example",
+    "objectID": "slides.html#what-project-example",
+    "href": "slides.html#what-project-example",
     "title": "Making Code Ready for Publication",
-    "section": "Project Example:",
-    "text": "Project Example:\nmy_project/                 ## Top level\n├── data/                   ## Data directory\n│   └── my_data.vcf  \n├─- output/                 ## Share output    \n└── 01_preprocessing.R      ## Scripts in order\n└── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n├── renv.lock               ## R Packages \n├── requirements.txt        ## Python Packages\n└── README.md"
+    "section": "What: Project Example:",
+    "text": "What: Project Example:\nmy_project/                 ## Top level\n├── data/                   ## Data directory\n│   └── my_data.vcf  \n├─- output/                 ## Share output    \n└── 01_preprocessing.R      ## Scripts in order\n└── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n├── renv.lock               ## R Packages \n├── requirements.txt        ## Python Packages\n└── README.md\nhttps://rstats.wtf/projects"
   },
   {
-    "objectID": "making_code_ready.html#what-notebooks-analysis-files",
-    "href": "making_code_ready.html#what-notebooks-analysis-files",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Notebooks / Analysis Files",
-    "text": "What: Notebooks / Analysis Files\nmy_project/                ## Top level    \n├── 01_preprocessing.R     ## Scripts in order\n├── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n\nEasiest: place in your top folder\nNumber in order\n\n01_preprocessing.R\n02_deseq2_analysis.qmd\n\nBe sure to include a random seed for reproducibility"
-  },
-  {
-    "objectID": "making_code_ready.html#relative-paths",
-    "href": "making_code_ready.html#relative-paths",
-    "title": "Making Code Ready for Publication",
-    "section": "Relative Paths",
-    "text": "Relative Paths\n\nEverything should be runnable from the top folder of the project. Put data in data/ folder. Use relative paths from the top project folder:\n\nmy_data &lt;- readr::read_csv(\"data/datafile.csv\")\n\nEnsures portability of project\n\nExample of a reproducible project:\nhttps://github.com/biodev/beataml2_manuscript"
-  },
-  {
-    "objectID": "making_code_ready.html#what-data-in-a-project",
-    "href": "making_code_ready.html#what-data-in-a-project",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Data in a Project",
-    "text": "What: Data in a Project\nmy_project/                ## Top level\n├── data                   ## Data directory\n│   └── my_data.vcf  \n\nGenomic and omics data is large\n\nraw data is not practical for GitHub (100 Mb limit)\nStore raw files in required respositories for your field\n\ndbGAP\n\ntrack what files were processed (manifest)\n\nSupply intermediate formats used to do the analysis, if possible:\n\nMAF\nVCF\nCSV"
-  },
-  {
-    "objectID": "making_code_ready.html#what-a-note-about-data",
-    "href": "making_code_ready.html#what-a-note-about-data",
-    "title": "Making Code Ready for Publication",
-    "section": "What: A Note about data",
-    "text": "What: A Note about data\nReproducibility in the Genomics Era\n\nLarge genomic data - sharing raw data is impractical in a project\n\nUse Intermediate formats instead, such as VCF files, CSV files\nUse .gitignore file to exclude large files\n\nWith code, share metadata - list the files you processed\n\nJSON files from workflows\nMetadata / Experimental Design\n\nWhere does each sample fit into Experimental Design?"
-  },
-  {
-    "objectID": "making_code_ready.html#reproducible-environments",
-    "href": "making_code_ready.html#reproducible-environments",
-    "title": "Making Code Ready for Publication",
-    "section": "Reproducible Environments",
-    "text": "Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph TD\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]"
-  },
-  {
-    "objectID": "making_code_ready.html#what-lockfile",
-    "href": "making_code_ready.html#what-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Lockfile",
-    "text": "What: Lockfile\nmy_project/                ## Top level\n├── renv.lock   \n├── requirements.txt\n\nList of packages and versions that you used in analysis\nPost analysis:\n\nPython: pip freeze &gt; requirements.txt\nR: renv::snapshot()\n\nTalk about rv and uv in Package management session"
-  },
-  {
-    "objectID": "making_code_ready.html#lockfile-examples",
-    "href": "making_code_ready.html#lockfile-examples",
-    "title": "Making Code Ready for Publication",
-    "section": "Lockfile Examples",
-    "text": "Lockfile Examples\n\nRPython\n\n\n{\n  \"R\": {\n    \"Version\": \"4.2.3\",\n    \"Repositories\": [\n      {\n        \"Name\": \"CRAN\",\n        \"URL\": \"https://cloud.r-project.org\"\n      }\n    ]\n  },\n  \"Packages\": {\n    \"markdown\": {\n      \"Package\": \"markdown\",\n      \"Version\": \"1.0\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"4584a57f565dd7987d59dda3a02cfb41\"\n    },\n    \"mime\": {\n      \"Package\": \"mime\",\n      \"Version\": \"0.7\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"908d95ccbfd1dd274073ef07a7c93934\"\n    }\n  }\n}\n\n\nanyio==4.11.0\nappnope==0.1.4\nargon2-cffi==25.1.0\nargon2-cffi-bindings==25.1.0\narrow==1.3.0\nasttokens==3.0.0\nasync-lru==2.0.5\nattrs==25.3.0\nbabel==2.17.0\nbeautifulsoup4==4.13.5\nbleach==6.2.0\ncertifi==2025.8.3\ncffi==2.0.0\n[...]"
-  },
-  {
-    "objectID": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
-    "href": "making_code_ready.html#what-making-a-lockfile-from-your-current-project",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Making a Lockfile from your current project",
-    "text": "What: Making a Lockfile from your current project\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
-  },
-  {
-    "objectID": "making_code_ready.html#exercise-build-a-lockfile",
-    "href": "making_code_ready.html#exercise-build-a-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "Exercise: Build a Lockfile",
-    "text": "Exercise: Build a Lockfile"
-  },
-  {
-    "objectID": "making_code_ready.html#what-reproducing-environment-from-lockfile",
-    "href": "making_code_ready.html#what-reproducing-environment-from-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Reproducing environment from lockfile",
-    "text": "What: Reproducing environment from lockfile\nGive zipped folder to someone else or host on github\n\nPythonR\n\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
-  },
-  {
-    "objectID": "making_code_ready.html#exercise-reproduce-environment-from-lockfile",
-    "href": "making_code_ready.html#exercise-reproduce-environment-from-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "Exercise: reproduce environment from lockfile",
-    "text": "Exercise: reproduce environment from lockfile\nExercise 2"
-  },
-  {
-    "objectID": "making_code_ready.html#why-not-conda",
-    "href": "making_code_ready.html#why-not-conda",
-    "title": "Making Code Ready for Publication",
-    "section": "Why not Conda?",
-    "text": "Why not Conda?\nAnaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.\nFor more info: https://conda-forge.fredhutch.org/"
-  },
-  {
-    "objectID": "making_code_ready.html#what-binder-ready-repository",
-    "href": "making_code_ready.html#what-binder-ready-repository",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Binder Ready Repository",
-    "text": "What: Binder Ready Repository\nA special way to share your analysis\n\nPut your project on GitHub\nCan plug your repository link into mybinder.org\nGenerates JupyterLab / RStudio / Shiny Server instance"
-  },
-  {
-    "objectID": "making_code_ready.html#what-binder.org",
-    "href": "making_code_ready.html#what-binder.org",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Binder.org",
-    "text": "What: Binder.org"
-  },
-  {
-    "objectID": "making_code_ready.html#how-does-binder-work",
-    "href": "making_code_ready.html#how-does-binder-work",
-    "title": "Making Code Ready for Publication",
-    "section": "How does Binder work?",
-    "text": "How does Binder work?\n\nLaunches your analysis in a container (Dockerizes your analysis)\nUses requirements.txt (Python), environment.yml (Conda) or install.R (R) or Dockerfiles in your repository\nInstalls relevant packages and dependencies into a docker image"
-  },
-  {
-    "objectID": "making_code_ready.html#install.r-using-renv-put-in-your-top-directory",
-    "href": "making_code_ready.html#install.r-using-renv-put-in-your-top-directory",
-    "title": "Making Code Ready for Publication",
-    "section": "install.R using renv (put in your top directory)",
-    "text": "install.R using renv (put in your top directory)\ninstall.packages(\"renv\")\nrenv::restore()"
-  },
-  {
-    "objectID": "making_code_ready.html#exercise-launch-a-binder-repository",
-    "href": "making_code_ready.html#exercise-launch-a-binder-repository",
-    "title": "Making Code Ready for Publication",
-    "section": "Exercise: Launch a Binder Repository",
-    "text": "Exercise: Launch a Binder Repository\n\nGo to mybinder.org\nPut in"
-  },
-  {
-    "objectID": "making_code_ready.html#some-cons-about-binder",
-    "href": "making_code_ready.html#some-cons-about-binder",
-    "title": "Making Code Ready for Publication",
-    "section": "Some Cons about Binder",
-    "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
-  },
-  {
-    "objectID": "making_code_ready.html#dockerfile",
-    "href": "making_code_ready.html#dockerfile",
-    "title": "Making Code Ready for Publication",
-    "section": "Dockerfile",
-    "text": "Dockerfile\n\nA precise list of instructions to install your computational environment\nMore useful if you are distributing software.\nMore portable across systems other than Binder\nTakes a lot of work, builds on the work of others"
-  },
-  {
-    "objectID": "making_code_ready.html#dockerfile-tips",
-    "href": "making_code_ready.html#dockerfile-tips",
-    "title": "Making Code Ready for Publication",
-    "section": "Dockerfile Tips",
-    "text": "Dockerfile Tips\n\nDon’t try to create Dockerfiles from scratch\n\nCommunity Images: BioC, Rocker Project, WILDS Docker Library\nUse https://repo2docker.readthedocs.io/en/latest/\n\nhttps://repo2docker.readthedocs.io/en/latest/configuration/#config-files"
-  },
-  {
-    "objectID": "making_code_ready.html#nix",
-    "href": "making_code_ready.html#nix",
-    "title": "Making Code Ready for Publication",
-    "section": "Nix",
-    "text": "Nix\n\nCurrently investigating Nix as a language agnostic reproducibility framework"
-  },
-  {
-    "objectID": "making_code_ready.html#what-readme",
-    "href": "making_code_ready.html#what-readme",
+    "objectID": "slides.html#what-readme",
+    "href": "slides.html#what-readme",
     "title": "Making Code Ready for Publication",
     "section": "What: README",
     "text": "What: README\nmy_project/                ## Top level\n└── README.md\n\nworkflow.png\nFirst thing that people will see\n\nhttps://github.com/biodev/HNSCC_Notebook\n\nDocument the basic workflow of processing\n\nHow does the data come together in the analysis?"
   },
   {
-    "objectID": "making_code_ready.html#how-and-where-testing-your-shared-project",
-    "href": "making_code_ready.html#how-and-where-testing-your-shared-project",
+    "objectID": "slides.html#what-notebooks-analysis-files",
+    "href": "slides.html#what-notebooks-analysis-files",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Notebooks / Analysis Files",
+    "text": "What: Notebooks / Analysis Files\nmy_project/                ## Top level    \n├── 01_preprocessing.R     ## Scripts in order\n├── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n\nEasiest: place in your top folder\nNumber in order\n\n01_preprocessing.R\n02_deseq2_analysis.qmd\n\nBe sure to include a random seed for reproducibility"
+  },
+  {
+    "objectID": "slides.html#relative-paths",
+    "href": "slides.html#relative-paths",
+    "title": "Making Code Ready for Publication",
+    "section": "Relative Paths",
+    "text": "Relative Paths\n\nEverything should be runnable from the top folder of the project. Put data in data/ folder. Use relative paths from the top project folder:\n\nmy_data &lt;- readr::read_csv(\"data/datafile.csv\")\n\nEnsures portability of project\n\nExample of a reproducible project:\nhttps://github.com/biodev/beataml2_manuscript"
+  },
+  {
+    "objectID": "slides.html#what-know-the-status-of-your-data",
+    "href": "slides.html#what-know-the-status-of-your-data",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Know the status of your data",
+    "text": "What: Know the status of your data\n\nIs your data restricted or regulated for sharing?\nSchedule a Data Governance House Call if unsure"
+  },
+  {
+    "objectID": "slides.html#what-data-in-a-project",
+    "href": "slides.html#what-data-in-a-project",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Data in a Project",
+    "text": "What: Data in a Project\nmy_project/                ## Top level\n├── data                   ## Data directory\n│   └── my_data.vcf  \n\nGenomic and omics data is large\n\nraw data is not practical for GitHub (100 Mb limit)\nStore raw files in required respositories for your field\n\ndbGAP\n\ntrack what files were processed (manifest)\n\nSupply intermediate formats used to do the analysis, if possible:\n\nMAF\nVCF\nCSV"
+  },
+  {
+    "objectID": "slides.html#what-a-note-about-data",
+    "href": "slides.html#what-a-note-about-data",
+    "title": "Making Code Ready for Publication",
+    "section": "What: A Note about data",
+    "text": "What: A Note about data\nReproducibility in the Genomics Era\n\nLarge genomic data - sharing raw data is impractical in a project\n\nUse Intermediate formats instead, such as VCF files, CSV files\nUse .gitignore file to exclude large files\n\nWith code, share metadata - list the files you processed\n\nJSON files from workflows\nMetadata / Experimental Design\n\nWhere does each sample fit into Experimental Design?"
+  },
+  {
+    "objectID": "slides.html#what-reproducible-environments",
+    "href": "slides.html#what-reproducible-environments",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Reproducible Environments",
+    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph TD\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]"
+  },
+  {
+    "objectID": "slides.html#what-lockfile",
+    "href": "slides.html#what-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Lockfile",
+    "text": "What: Lockfile\nmy_project/                ## Top level\n├── renv.lock   \n├── requirements.txt\n\nList of packages and versions that you used in analysis\nPost analysis:\n\nPython: pip freeze &gt; requirements.txt\nR: renv::snapshot()\n\nTalk about rv and uv in Package management session"
+  },
+  {
+    "objectID": "slides.html#lockfile-examples",
+    "href": "slides.html#lockfile-examples",
+    "title": "Making Code Ready for Publication",
+    "section": "Lockfile Examples",
+    "text": "Lockfile Examples\n\nRPython\n\n\n{\n  \"R\": {\n    \"Version\": \"4.2.3\",\n    \"Repositories\": [\n      {\n        \"Name\": \"CRAN\",\n        \"URL\": \"https://cloud.r-project.org\"\n      }\n    ]\n  },\n  \"Packages\": {\n    \"markdown\": {\n      \"Package\": \"markdown\",\n      \"Version\": \"1.0\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"4584a57f565dd7987d59dda3a02cfb41\"\n    },\n    \"mime\": {\n      \"Package\": \"mime\",\n      \"Version\": \"0.7\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"908d95ccbfd1dd274073ef07a7c93934\"\n    }\n  }\n}\n\n\nanyio==4.11.0\nappnope==0.1.4\nargon2-cffi==25.1.0\nargon2-cffi-bindings==25.1.0\narrow==1.3.0\nasttokens==3.0.0\nasync-lru==2.0.5\nattrs==25.3.0\nbabel==2.17.0\nbeautifulsoup4==4.13.5\nbleach==6.2.0\ncertifi==2025.8.3\ncffi==2.0.0\n[...]"
+  },
+  {
+    "objectID": "slides.html#what-making-a-lockfile-from-your-current-project",
+    "href": "slides.html#what-making-a-lockfile-from-your-current-project",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Making a Lockfile from your current project",
+    "text": "What: Making a Lockfile from your current project\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-a-lockfile",
+    "href": "slides.html#exercise-look-at-a-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at a lockfile",
+    "text": "Exercise: Look at a lockfile"
+  },
+  {
+    "objectID": "slides.html#what-reproducing-environment-from-lockfile",
+    "href": "slides.html#what-reproducing-environment-from-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Reproducing environment from lockfile",
+    "text": "What: Reproducing environment from lockfile\nGive zipped folder to someone else or host on github\n\nPythonR\n\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
+  },
+  {
+    "objectID": "slides.html#exercise-reproduce-environment-from-lockfile",
+    "href": "slides.html#exercise-reproduce-environment-from-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: reproduce environment from lockfile",
+    "text": "Exercise: reproduce environment from lockfile\nExercise 2"
+  },
+  {
+    "objectID": "slides.html#why-not-conda",
+    "href": "slides.html#why-not-conda",
+    "title": "Making Code Ready for Publication",
+    "section": "Why not Conda?",
+    "text": "Why not Conda?\nAnaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.\nFor more info: https://conda-forge.fredhutch.org/"
+  },
+  {
+    "objectID": "slides.html#what-binder-ready-repository",
+    "href": "slides.html#what-binder-ready-repository",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Binder Ready Repository",
+    "text": "What: Binder Ready Repository\nA special way to share your analysis\n\nPut your project on GitHub\nCan plug your repository link into mybinder.org\nGenerates JupyterLab / RStudio / Shiny Server instance"
+  },
+  {
+    "objectID": "slides.html#what-binder.org",
+    "href": "slides.html#what-binder.org",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Binder.org",
+    "text": "What: Binder.org"
+  },
+  {
+    "objectID": "slides.html#how-does-binder-work",
+    "href": "slides.html#how-does-binder-work",
+    "title": "Making Code Ready for Publication",
+    "section": "How does Binder work?",
+    "text": "How does Binder work?\n\nLaunches your analysis in a container (Dockerizes your analysis)\nUses requirements.txt (Python), environment.yml (Conda) or install.R (R) or Dockerfiles in your repository\nInstalls relevant packages and dependencies into a docker image"
+  },
+  {
+    "objectID": "slides.html#install.r-using-renv-put-in-your-top-directory",
+    "href": "slides.html#install.r-using-renv-put-in-your-top-directory",
+    "title": "Making Code Ready for Publication",
+    "section": "install.R using renv (put in your top directory)",
+    "text": "install.R using renv (put in your top directory)\ninstall.packages(\"renv\")\nrenv::restore()"
+  },
+  {
+    "objectID": "slides.html#exercise-launch-a-binder-repository",
+    "href": "slides.html#exercise-launch-a-binder-repository",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Launch a Binder Repository",
+    "text": "Exercise: Launch a Binder Repository\n\nGo to mybinder.org\nPut in"
+  },
+  {
+    "objectID": "slides.html#some-cons-about-binder",
+    "href": "slides.html#some-cons-about-binder",
+    "title": "Making Code Ready for Publication",
+    "section": "Some Cons about Binder",
+    "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
+  },
+  {
+    "objectID": "slides.html#how-and-where-testing-your-shared-project",
+    "href": "slides.html#how-and-where-testing-your-shared-project",
     "title": "Making Code Ready for Publication",
     "section": "How and Where: Testing your shared project",
     "text": "How and Where: Testing your shared project\n\nTry downloading and installing on a different computer to make sure that you can rerun analyses\nTake someone else through the process and test out the notebooks\nIf making binder ready: test the repository on Binder"
   },
   {
-    "objectID": "making_code_ready.html#how-review-opportunities",
-    "href": "making_code_ready.html#how-review-opportunities",
+    "objectID": "slides.html#how-review-opportunities",
+    "href": "slides.html#how-review-opportunities",
     "title": "Making Code Ready for Publication",
     "section": "How: Review Opportunities",
     "text": "How: Review Opportunities\n\nReview Opportunities\n\nData House Calls\nPyOpenSci and ROpenSci for code review if you decide to package your code\nWILDS WDL Library\nWILDS Docker Library (?)\n\nIf you’re making a package\n\n\nWILDS Collaborative Projects"
   },
   {
-    "objectID": "making_code_ready.html#how-and-where-sharing-your-analyses",
-    "href": "making_code_ready.html#how-and-where-sharing-your-analyses",
+    "objectID": "slides.html#how-and-where-sharing-your-analyses",
+    "href": "slides.html#how-and-where-sharing-your-analyses",
     "title": "Making Code Ready for Publication",
     "section": "How and Where: Sharing Your Analyses",
     "text": "How and Where: Sharing Your Analyses\n\nGitHub (for code)\nOpen Science Framework (for code + data)\nField specific databases\nSocial Media: LinkedIn, Bluesky, etc."
   },
   {
-    "objectID": "making_code_ready.html#where-should-you-share-code",
-    "href": "making_code_ready.html#where-should-you-share-code",
+    "objectID": "slides.html#where-should-you-share-code",
+    "href": "slides.html#where-should-you-share-code",
     "title": "Making Code Ready for Publication",
     "section": "Where should you share code?",
     "text": "Where should you share code?\nShare in a public repository:\n\nGitHub\nCodeberg\nReadtheDocs\n\nBe aware of file size limitations!"
   },
   {
-    "objectID": "making_code_ready.html#how-data-repositories",
-    "href": "making_code_ready.html#how-data-repositories",
+    "objectID": "slides.html#how-data-repositories",
+    "href": "slides.html#how-data-repositories",
     "title": "Making Code Ready for Publication",
     "section": "How: Data Repositories",
     "text": "How: Data Repositories\n\nData repositories\n\nOpen Science Framework\nRequired databases (dbGAP)\nBe aware that you will need to provide metadata\n\nExperimental design\n\nBe careful when sharing human subjects data\n\nIf unsure, schedule a Data Governance House Call"
   },
   {
-    "objectID": "making_code_ready.html#references",
-    "href": "making_code_ready.html#references",
+    "objectID": "slides.html#targets-and-workflow-builders",
+    "href": "slides.html#targets-and-workflow-builders",
+    "title": "Making Code Ready for Publication",
+    "section": "{targets} and Workflow Builders",
+    "text": "{targets} and Workflow Builders\n\nAnother layer of complexity\nLets you chain together notebooks\nA lot like snakemake\n\nTargets example: https://github.com/biodev/hnscc_manuscript"
+  },
+  {
+    "objectID": "slides.html#dockerfile",
+    "href": "slides.html#dockerfile",
+    "title": "Making Code Ready for Publication",
+    "section": "Dockerfile",
+    "text": "Dockerfile\n\nA precise list of instructions to install your computational environment\nMore useful if you are distributing software.\nMore portable across systems other than Binder\nTakes a lot of work, builds on the work of others"
+  },
+  {
+    "objectID": "slides.html#dockerfile-example",
+    "href": "slides.html#dockerfile-example",
+    "title": "Making Code Ready for Publication",
+    "section": "Dockerfile example",
+    "text": "Dockerfile example\nFROM debian:bookworm-slim AS builder\n\nRUN Rscript"
+  },
+  {
+    "objectID": "slides.html#there-will-be-a-lot-of-crying",
+    "href": "slides.html#there-will-be-a-lot-of-crying",
+    "title": "Making Code Ready for Publication",
+    "section": "There will be a lot of crying",
+    "text": "There will be a lot of crying\n\nDockerfiles are a lot of work"
+  },
+  {
+    "objectID": "slides.html#dockerfile-tips",
+    "href": "slides.html#dockerfile-tips",
+    "title": "Making Code Ready for Publication",
+    "section": "Dockerfile Tips",
+    "text": "Dockerfile Tips\n\nDon’t try to create Dockerfiles from scratch\n\nCommunity Images: BioC, Rocker Project, WILDS Docker Library\nUse https://repo2docker.readthedocs.io/en/latest/\n\nhttps://repo2docker.readthedocs.io/en/latest/configuration/#config-files"
+  },
+  {
+    "objectID": "slides.html#nix",
+    "href": "slides.html#nix",
+    "title": "Making Code Ready for Publication",
+    "section": "Nix",
+    "text": "Nix\n\nCurrently investigating Nix as a language agnostic reproducibility framework"
+  },
+  {
+    "objectID": "slides.html#references",
+    "href": "slides.html#references",
     "title": "Making Code Ready for Publication",
     "section": "References",
     "text": "References\n\nhttps://book.the-turing-way.org/reproducible-research/compendia/\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510\nhttps://openscapes.github.io/series/core-lessons/coding-strategies.html\nhttps://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html\nhttps://www.nature.com/articles/s41467-021-25974-w\nhttps://journals.plos.org/plosone/s/materials-software-and-code-sharing - Materials, Software and Code\nhttps://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines\nhttps://binderhub.readthedocs.io/en/latest/overview.html\n\nSource: https://book.the-turing-way.org/reproducible-research/code-reuse"
-  },
-  {
-    "objectID": "making_code_ready.html#outline-old",
-    "href": "making_code_ready.html#outline-old",
-    "title": "Making Code Ready for Publication",
-    "section": "Outline (old)",
-    "text": "Outline (old)\n\nDefining reproducibility\n\nhttps://osf.io/numa5 reproducible paper checklist\nNIH Best Practices for Sharing Software\n\nRepeatable\n\nThe GitHub Ecosystem + Zenodo\nOpen Science Framework\n\nRe-runnable\n\nDocumentation\nFunctions\nPackaging\n\nPortable\n\nContainerization\nStarting points\nBinderHub\nGitHub Codespaces"
   },
   {
     "objectID": "index.html",
@@ -306,82 +355,5 @@
     "title": "Making Code Ready for Publication",
     "section": "",
     "text": "Intro to Git/GitHub highly suggested"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this site"
-  },
-  {
-    "objectID": "making_code_ready.html#it-worked-on-my-machine",
-    "href": "making_code_ready.html#it-worked-on-my-machine",
-    "title": "Making Code Ready for Publication",
-    "section": "“It worked on my machine”",
-    "text": "“It worked on my machine”\n\nWhat are some issues that you’ve encountered in sharing your analyses with other people?"
-  },
-  {
-    "objectID": "making_code_ready.html#why-reproducibility-is-a-spectrum",
-    "href": "making_code_ready.html#why-reproducibility-is-a-spectrum",
-    "title": "Making Code Ready for Publication",
-    "section": "Why: Reproducibility is a Spectrum",
-    "text": "Why: Reproducibility is a Spectrum\n\nDo what you can\nProviding a good framework for running analyses\nWho is going to look at your code?\nWhere are you going to share it?"
-  },
-  {
-    "objectID": "making_code_ready.html#what-project-example",
-    "href": "making_code_ready.html#what-project-example",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Project Example:",
-    "text": "What: Project Example:\nmy_project/                 ## Top level\n├── data/                   ## Data directory\n│   └── my_data.vcf  \n├─- output/                 ## Share output    \n└── 01_preprocessing.R      ## Scripts in order\n└── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n├── renv.lock               ## R Packages \n├── requirements.txt        ## Python Packages\n└── README.md\nhttps://rstats.wtf/projects"
-  },
-  {
-    "objectID": "making_code_ready.html#what-reproducible-environments",
-    "href": "making_code_ready.html#what-reproducible-environments",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Reproducible Environments",
-    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph TD\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]"
-  },
-  {
-    "objectID": "making_code_ready.html#exercise-look-at-a-lockfile",
-    "href": "making_code_ready.html#exercise-look-at-a-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "Exercise: Look at a lockfile",
-    "text": "Exercise: Look at a lockfile"
-  },
-  {
-    "objectID": "making_code_ready.html#targets-and-workflow-builders",
-    "href": "making_code_ready.html#targets-and-workflow-builders",
-    "title": "Making Code Ready for Publication",
-    "section": "{targets} and Workflow Builders",
-    "text": "{targets} and Workflow Builders\n\nAnother layer of complexity\nLets you chain together notebooks\nA lot like snakemake\n\nTargets example: https://github.com/biodev/hnscc_manuscript"
-  },
-  {
-    "objectID": "making_code_ready.html#dockerfile-example",
-    "href": "making_code_ready.html#dockerfile-example",
-    "title": "Making Code Ready for Publication",
-    "section": "Dockerfile example",
-    "text": "Dockerfile example\nFROM debian:bookworm-slim AS builder\n\nRUN Rscript"
-  },
-  {
-    "objectID": "making_code_ready.html#there-will-be-a-lot-of-crying",
-    "href": "making_code_ready.html#there-will-be-a-lot-of-crying",
-    "title": "Making Code Ready for Publication",
-    "section": "There will be a lot of crying",
-    "text": "There will be a lot of crying\n\nDockerfiles are a lot of work"
-  },
-  {
-    "objectID": "making_code_ready.html#reproducible-analyses-are-not-perfect",
-    "href": "making_code_ready.html#reproducible-analyses-are-not-perfect",
-    "title": "Making Code Ready for Publication",
-    "section": "Reproducible Analyses are not perfect",
-    "text": "Reproducible Analyses are not perfect\n\nThey only need to be able to run on another machine\nDon’t let perfect be the enemy of good"
-  },
-  {
-    "objectID": "making_code_ready.html#what-know-the-status-of-your-data",
-    "href": "making_code_ready.html#what-know-the-status-of-your-data",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Know the status of your data",
-    "text": "What: Know the status of your data\n\nIs your data restricted or regulated for sharing?\nSchedule a Data Governance House Call if unsure"
   }
 ]
