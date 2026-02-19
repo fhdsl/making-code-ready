@@ -140,11 +140,18 @@
     "text": "What: A Note about data\nReproducibility in the Genomics Era\n\nLarge genomic data - sharing raw data is impractical in a project\n\nUse Intermediate formats instead, such as VCF files, CSV files\nUse .gitignore file to exclude large files\n\nWith code, share metadata - list the files you processed\n\nJSON files from workflows\nMetadata / Experimental Design\n\nWhere does each sample fit into Experimental Design?"
   },
   {
+    "objectID": "slides.html#what-reproducible-environment",
+    "href": "slides.html#what-reproducible-environment",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Reproducible Environment",
+    "text": "What: Reproducible Environment\n\nReproducible Environment:\n\n\na computational environment is the system where a program is run.\n\n\nOperating System/Platform\nLanguage Version\nPackage Versions\nSoftware Dependencies"
+  },
+  {
     "objectID": "slides.html#what-reproducible-environments",
     "href": "slides.html#what-reproducible-environments",
     "title": "Making Code Ready for Publication",
     "section": "What: Reproducible Environments",
-    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph TD\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]"
+    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph LR\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]\n\n\n\n\n\n\nThere is a tradeoff between - Effort on your side - Ease of Use on User End"
   },
   {
     "objectID": "slides.html#what-lockfile",
@@ -154,6 +161,13 @@
     "text": "What: Lockfile\nmy_project/                ## Top level\n├── renv.lock   \n├── requirements.txt\n\nList of packages and versions that you used in analysis\nPost analysis:\n\nPython: pip freeze &gt; requirements.txt\nR: renv::snapshot()\n\nTalk about rv and uv in Package management session"
   },
   {
+    "objectID": "slides.html#what-lockfiles-and-environments",
+    "href": "slides.html#what-lockfiles-and-environments",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Lockfiles and Environments",
+    "text": "What: Lockfiles and Environments\n\nLockfiles are a recipe for recreating an environment\nWe use tools to recreate them:\n\nR: renv and rv\nPython: venv and uv\n\nEnvironments live in our folder isolated from everything else\n\nVersions of R/Python"
+  },
+  {
     "objectID": "slides.html#lockfile-examples",
     "href": "slides.html#lockfile-examples",
     "title": "Making Code Ready for Publication",
@@ -161,18 +175,11 @@
     "text": "Lockfile Examples\n\nRPython\n\n\n{\n  \"R\": {\n    \"Version\": \"4.2.3\",\n    \"Repositories\": [\n      {\n        \"Name\": \"CRAN\",\n        \"URL\": \"https://cloud.r-project.org\"\n      }\n    ]\n  },\n  \"Packages\": {\n    \"markdown\": {\n      \"Package\": \"markdown\",\n      \"Version\": \"1.0\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"4584a57f565dd7987d59dda3a02cfb41\"\n    },\n    \"mime\": {\n      \"Package\": \"mime\",\n      \"Version\": \"0.7\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"908d95ccbfd1dd274073ef07a7c93934\"\n    }\n  }\n}\n\n\nanyio==4.11.0\nappnope==0.1.4\nargon2-cffi==25.1.0\nargon2-cffi-bindings==25.1.0\narrow==1.3.0\nasttokens==3.0.0\nasync-lru==2.0.5\nattrs==25.3.0\nbabel==2.17.0\nbeautifulsoup4==4.13.5\nbleach==6.2.0\ncertifi==2025.8.3\ncffi==2.0.0\n[...]"
   },
   {
-    "objectID": "slides.html#what-making-a-lockfile-from-your-current-project",
-    "href": "slides.html#what-making-a-lockfile-from-your-current-project",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Making a Lockfile from your current project",
-    "text": "What: Making a Lockfile from your current project\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
-  },
-  {
     "objectID": "slides.html#exercise-look-at-a-lockfile",
     "href": "slides.html#exercise-look-at-a-lockfile",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Look at a lockfile",
-    "text": "Exercise: Look at a lockfile"
+    "text": "Exercise: Look at a lockfile\n\nR: https://github.com/fhdsl/mcr_example_r - look at renv.lock\nnPython: https://github.com/fhdsl/mcr_example_r - look at requirements.txt and uv.lock"
   },
   {
     "objectID": "slides.html#what-reproducing-environment-from-lockfile",
@@ -189,11 +196,53 @@
     "text": "Exercise: reproduce environment from lockfile\nExercise 2"
   },
   {
+    "objectID": "slides.html#what-making-a-lockfile-from-your-current-project",
+    "href": "slides.html#what-making-a-lockfile-from-your-current-project",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Making a Lockfile from your current project",
+    "text": "What: Making a Lockfile from your current project\n\nUsually done after you execute a notebook\nTakes the packages you have loaded into memory and then writes them to lockfile with versions.\n\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
+  },
+  {
     "objectID": "slides.html#why-not-conda",
     "href": "slides.html#why-not-conda",
     "title": "Making Code Ready for Publication",
     "section": "Why not Conda?",
     "text": "Why not Conda?\nAnaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.\nFor more info: https://conda-forge.fredhutch.org/"
+  },
+  {
+    "objectID": "slides.html#how-and-where-testing-your-shared-project",
+    "href": "slides.html#how-and-where-testing-your-shared-project",
+    "title": "Making Code Ready for Publication",
+    "section": "How and Where: Testing your shared project",
+    "text": "How and Where: Testing your shared project\n\nTry downloading and installing on a different computer to make sure that you can rerun analyses\nTake someone else through the process and test out the notebooks\nIf making binder ready: test the repository on Binder"
+  },
+  {
+    "objectID": "slides.html#how-review-opportunities",
+    "href": "slides.html#how-review-opportunities",
+    "title": "Making Code Ready for Publication",
+    "section": "How: Review Opportunities",
+    "text": "How: Review Opportunities\n\nReview Opportunities\n\nData House Calls\nPyOpenSci and ROpenSci for code review if you decide to package your code\nWILDS WDL Library\nWILDS Docker Library (?)\n\nIf you’re making a package\n\n\nWILDS Collaborative Projects"
+  },
+  {
+    "objectID": "slides.html#how-and-where-sharing-your-analyses",
+    "href": "slides.html#how-and-where-sharing-your-analyses",
+    "title": "Making Code Ready for Publication",
+    "section": "How and Where: Sharing Your Analyses",
+    "text": "How and Where: Sharing Your Analyses\n\nGitHub (for code)\nOpen Science Framework (for code + data)\nField specific databases\nSocial Media: LinkedIn, Bluesky, etc."
+  },
+  {
+    "objectID": "slides.html#where-should-you-share-code",
+    "href": "slides.html#where-should-you-share-code",
+    "title": "Making Code Ready for Publication",
+    "section": "Where should you share code?",
+    "text": "Where should you share code?\nShare in a public repository:\n\nGitHub\nCodeberg\nReadtheDocs\n\nBe aware of file size limitations!"
+  },
+  {
+    "objectID": "slides.html#how-data-repositories",
+    "href": "slides.html#how-data-repositories",
+    "title": "Making Code Ready for Publication",
+    "section": "How: Data Repositories",
+    "text": "How: Data Repositories\n\nData repositories\n\nOpen Science Framework\nRequired databases (dbGAP)\nBe aware that you will need to provide metadata\n\nExperimental design\n\nBe careful when sharing human subjects data\n\nIf unsure, schedule a Data Governance House Call"
   },
   {
     "objectID": "slides.html#what-binder-ready-repository",
@@ -236,41 +285,6 @@
     "title": "Making Code Ready for Publication",
     "section": "Some Cons about Binder",
     "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
-  },
-  {
-    "objectID": "slides.html#how-and-where-testing-your-shared-project",
-    "href": "slides.html#how-and-where-testing-your-shared-project",
-    "title": "Making Code Ready for Publication",
-    "section": "How and Where: Testing your shared project",
-    "text": "How and Where: Testing your shared project\n\nTry downloading and installing on a different computer to make sure that you can rerun analyses\nTake someone else through the process and test out the notebooks\nIf making binder ready: test the repository on Binder"
-  },
-  {
-    "objectID": "slides.html#how-review-opportunities",
-    "href": "slides.html#how-review-opportunities",
-    "title": "Making Code Ready for Publication",
-    "section": "How: Review Opportunities",
-    "text": "How: Review Opportunities\n\nReview Opportunities\n\nData House Calls\nPyOpenSci and ROpenSci for code review if you decide to package your code\nWILDS WDL Library\nWILDS Docker Library (?)\n\nIf you’re making a package\n\n\nWILDS Collaborative Projects"
-  },
-  {
-    "objectID": "slides.html#how-and-where-sharing-your-analyses",
-    "href": "slides.html#how-and-where-sharing-your-analyses",
-    "title": "Making Code Ready for Publication",
-    "section": "How and Where: Sharing Your Analyses",
-    "text": "How and Where: Sharing Your Analyses\n\nGitHub (for code)\nOpen Science Framework (for code + data)\nField specific databases\nSocial Media: LinkedIn, Bluesky, etc."
-  },
-  {
-    "objectID": "slides.html#where-should-you-share-code",
-    "href": "slides.html#where-should-you-share-code",
-    "title": "Making Code Ready for Publication",
-    "section": "Where should you share code?",
-    "text": "Where should you share code?\nShare in a public repository:\n\nGitHub\nCodeberg\nReadtheDocs\n\nBe aware of file size limitations!"
-  },
-  {
-    "objectID": "slides.html#how-data-repositories",
-    "href": "slides.html#how-data-repositories",
-    "title": "Making Code Ready for Publication",
-    "section": "How: Data Repositories",
-    "text": "How: Data Repositories\n\nData repositories\n\nOpen Science Framework\nRequired databases (dbGAP)\nBe aware that you will need to provide metadata\n\nExperimental design\n\nBe careful when sharing human subjects data\n\nIf unsure, schedule a Data Governance House Call"
   },
   {
     "objectID": "slides.html#targets-and-workflow-builders",

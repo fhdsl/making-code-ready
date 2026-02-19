@@ -406,6 +406,21 @@
 </ul></li>
 </ul>
 </section>
+<section id="what-reproducible-environment" class="slide level2">
+<h2>What: Reproducible Environment</h2>
+<ul>
+<li>Reproducible Environment:</li>
+</ul>
+<blockquote>
+<p>a computational environment is the system where a program is run.</p>
+</blockquote>
+<ul>
+<li>Operating System/Platform</li>
+<li><strong>Language Version</strong></li>
+<li><strong>Package Versions</strong></li>
+<li><strong>Software Dependencies</strong></li>
+</ul>
+</section>
 <section id="what-reproducible-environments" class="slide level2">
 <h2>What: Reproducible Environments</h2>
 <p>In order of complexity:</p>
@@ -414,7 +429,7 @@
 <div>
 <p></p><figure class=""><p></p>
 <div>
-<pre class="mermaid mermaid-js">graph TD
+<pre class="mermaid mermaid-js">graph LR
 A[Lockfile] --&gt; B
 B[Binder Ready] --&gt; C
 C[Dockerfile]
@@ -424,6 +439,7 @@ C[Dockerfile]
 </div>
 </div>
 </div>
+<p>There is a tradeoff between - Effort on your side - Ease of Use on User End</p>
 </section>
 <section id="what-lockfile" class="slide level2">
 <h2>What: Lockfile</h2>
@@ -438,6 +454,22 @@ C[Dockerfile]
 <li>R: <code>renv::snapshot()</code></li>
 </ul></li>
 <li>Talk about <code>rv</code> and <code>uv</code> in Package management session</li>
+</ul>
+</section>
+<section id="what-lockfiles-and-environments" class="slide level2">
+<h2>What: Lockfiles and Environments</h2>
+<ul>
+<li>Lockfiles are a recipe for recreating an environment</li>
+<li>We use tools to recreate them:
+<ul>
+<li>R: <code>renv</code> and <code>rv</code></li>
+<li>Python: <code>venv</code> and <code>uv</code></li>
+</ul></li>
+<li>Environments live in our folder isolated from everything else
+<ul>
+<li>Versions of R/Python</li>
+<li></li>
+</ul></li>
 </ul>
 </section>
 <section id="lockfile-examples" class="slide level2">
@@ -493,49 +525,27 @@ C[Dockerfile]
 </div>
 </div>
 </section>
-<section id="what-making-a-lockfile-from-your-current-project" class="slide level2">
-<h2>What: Making a Lockfile from your current project</h2>
-<div class="panel-tabset">
-<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>
-<div class="tab-content">
-<div id="tabset-2-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a><span class="co"># pip install session-info</span></span>
-<span id="cb9-2"><a></a><span class="co"># uv add session-info</span></span>
-<span id="cb9-3"><a></a><span class="im">import</span> session_info <span class="im">as</span> si</span>
-<span id="cb9-4"><a></a><span class="co"># put this at the end of your notebook</span></span>
-<span id="cb9-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Install the <a href="https://pypi.org/project/session-info/">session-info package</a></li>
-</ul>
-</div>
-<div id="tabset-2-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># install.packages("renv")</span></span>
-<span id="cb10-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Can use the <code>renv</code> package to generate a current list of packages</li>
-<li>Does not require a virtual environment to be initialized</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
 <section id="exercise-look-at-a-lockfile" class="slide level2">
 <h2>Exercise: Look at a lockfile</h2>
+<ul>
+<li>R: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>renv.lock</code></li>
+<li>nPython: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>requirements.txt</code> and <code>uv.lock</code></li>
+</ul>
 </section>
 <section id="what-reproducing-environment-from-lockfile" class="slide level2">
 <h2>What: Reproducing environment from lockfile</h2>
 <p>Give zipped folder to someone else or host on github</p>
 <div class="panel-tabset">
-<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Python</a></li><li><a href="#tabset-3-2">R</a></li></ul>
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>
 <div class="tab-content">
-<div id="tabset-3-1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a>venv</span>
-<span id="cb11-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
-<span id="cb11-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tabset-2-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>venv</span>
+<span id="cb9-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
+<span id="cb9-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="tabset-3-2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb12-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="tabset-2-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb10-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -544,50 +554,40 @@ C[Dockerfile]
 <h2>Exercise: reproduce environment from lockfile</h2>
 <p><a href="./restore_activity.html">Exercise 2</a></p>
 </section>
+<section id="what-making-a-lockfile-from-your-current-project" class="slide level2">
+<h2>What: Making a Lockfile from your current project</h2>
+<ul>
+<li>Usually done after you execute a notebook</li>
+<li>Takes the packages you have loaded into memory and then writes them to lockfile with versions.</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Python</a></li><li><a href="#tabset-3-2">R</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># pip install session-info</span></span>
+<span id="cb11-2"><a></a><span class="co"># uv add session-info</span></span>
+<span id="cb11-3"><a></a><span class="im">import</span> session_info <span class="im">as</span> si</span>
+<span id="cb11-4"><a></a><span class="co"># put this at the end of your notebook</span></span>
+<span id="cb11-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Install the <a href="https://pypi.org/project/session-info/">session-info package</a></li>
+</ul>
+</div>
+<div id="tabset-3-2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># install.packages("renv")</span></span>
+<span id="cb12-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Can use the <code>renv</code> package to generate a current list of packages</li>
+<li>Does not require a virtual environment to be initialized</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 <section id="why-not-conda" class="slide level2">
 <h2>Why not Conda?</h2>
 <p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
 <p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
-</section>
-<section id="what-binder-ready-repository" class="slide level2">
-<h2>What: Binder Ready Repository</h2>
-<p>A special way to share your analysis</p>
-<ul>
-<li>Put your project on GitHub</li>
-<li>Can plug your repository link into <code>mybinder.org</code></li>
-<li>Generates JupyterLab / RStudio / Shiny Server instance</li>
-</ul>
-</section>
-<section id="what-binder.org" class="slide level2">
-<h2>What: Binder.org</h2>
-
-<img data-src="binder.jpg" class="r-stretch"></section>
-<section id="how-does-binder-work" class="slide level2">
-<h2>How does Binder work?</h2>
-<ul>
-<li>Launches your analysis in a container (Dockerizes your analysis)</li>
-<li>Uses <code>requirements.txt</code> (Python), <code>environment.yml</code> (Conda) or <code>install.R</code> (R) or Dockerfiles in your repository</li>
-<li>Installs relevant packages and dependencies into a docker image</li>
-</ul>
-</section>
-<section id="install.r-using-renv-put-in-your-top-directory" class="slide level2">
-<h2><code>install.R</code> using <code>renv</code> (put in your top directory)</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
-<span id="cb13-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="exercise-launch-a-binder-repository" class="slide level2">
-<h2>Exercise: Launch a Binder Repository</h2>
-<ul>
-<li>Go to <a href="https://mybinder.org">mybinder.org</a></li>
-<li>Put in</li>
-</ul>
-</section>
-<section id="some-cons-about-binder" class="slide level2">
-<h2>Some Cons about Binder</h2>
-<ul>
-<li>Currently limited to 1 Gb of memory for an instance</li>
-<li>If your image files aren’t used at least once a week, they get deleted</li>
-</ul>
 </section></section>
 <section>
 <section id="how" class="title-slide slide level1 center">
@@ -659,6 +659,46 @@ C[Dockerfile]
 <section id="advanced-topics" class="title-slide slide level1 center">
 <h1>Advanced Topics</h1>
 
+</section>
+<section id="what-binder-ready-repository" class="slide level2">
+<h2>What: Binder Ready Repository</h2>
+<p>A special way to share your analysis</p>
+<ul>
+<li>Put your project on GitHub</li>
+<li>Can plug your repository link into <code>mybinder.org</code></li>
+<li>Generates JupyterLab / RStudio / Shiny Server instance</li>
+</ul>
+</section>
+<section id="what-binder.org" class="slide level2">
+<h2>What: Binder.org</h2>
+
+<img data-src="binder.jpg" class="r-stretch"></section>
+<section id="how-does-binder-work" class="slide level2">
+<h2>How does Binder work?</h2>
+<ul>
+<li>Launches your analysis in a container (Dockerizes your analysis)</li>
+<li>Uses <code>requirements.txt</code> (Python), <code>environment.yml</code> (Conda) or <code>install.R</code> (R) or Dockerfiles in your repository</li>
+<li>Installs relevant packages and dependencies into a docker image</li>
+</ul>
+</section>
+<section id="install.r-using-renv-put-in-your-top-directory" class="slide level2">
+<h2><code>install.R</code> using <code>renv</code> (put in your top directory)</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb13-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="exercise-launch-a-binder-repository" class="slide level2">
+<h2>Exercise: Launch a Binder Repository</h2>
+<ul>
+<li>Go to <a href="https://mybinder.org">mybinder.org</a></li>
+<li>Put in</li>
+</ul>
+</section>
+<section id="some-cons-about-binder" class="slide level2">
+<h2>Some Cons about Binder</h2>
+<ul>
+<li>Currently limited to 1 Gb of memory for an instance</li>
+<li>If your image files aren’t used at least once a week, they get deleted</li>
+</ul>
 </section>
 <section id="targets-and-workflow-builders" class="slide level2">
 <h2><code>{targets}</code> and Workflow Builders</h2>
