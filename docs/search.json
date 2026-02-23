@@ -95,7 +95,7 @@
     "href": "slides.html#what-separate-folders",
     "title": "Making Code Ready for Publication",
     "section": "What: Separate Folders",
-    "text": "What: Separate Folders\n\nEnsures portability across platforms"
+    "text": "What: Separate Folders\n\nEnsures portability across platforms\nIf there is repeated code from another project, considering packaging at that code"
   },
   {
     "objectID": "slides.html#what-project-example",
@@ -312,7 +312,7 @@
     "href": "slides.html#tl-dr",
     "title": "Making Code Ready for Publication",
     "section": "TL; DR",
-    "text": "TL; DR\n\nUse separate folders for each of your projects\nGo down the list\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
+    "text": "TL; DR\n\nUse separate folders for each of your projects\nGo down the list of minimal information\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
   },
   {
     "objectID": "slides.html#whats-next",
@@ -439,5 +439,47 @@
     "title": "Making Code Ready for Publication",
     "section": "",
     "text": "Intro to Git/GitHub highly suggested"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-a-readme-5-min",
+    "href": "slides.html#exercise-look-at-a-readme-5-min",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at a README (5 min)",
+    "text": "Exercise: Look at a README (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-how-notebooks-are-organized-5-min",
+    "href": "slides.html#exercise-look-at-how-notebooks-are-organized-5-min",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at How Notebooks are Organized (5 min)",
+    "text": "Exercise: Look at How Notebooks are Organized (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+  },
+  {
+    "objectID": "slides.html#exercise-examine-how-data-is-stored-5-minutes",
+    "href": "slides.html#exercise-examine-how-data-is-stored-5-minutes",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Examine how data is stored (5 minutes)",
+    "text": "Exercise: Examine how data is stored (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+  },
+  {
+    "objectID": "slides.html#exercise-examine-reproducible-environments-5-minuts",
+    "href": "slides.html#exercise-examine-reproducible-environments-5-minuts",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Examine Reproducible Environments (5 minuts)",
+    "text": "Exercise: Examine Reproducible Environments (5 minuts)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R) B. BeatAML2 Manuscript Workflow (R) C. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc\n\nHow did they reproduce the environment, or did they?"
+  },
+  {
+    "objectID": "slides.html#exercise-examine-reproducible-environments-5-minutes",
+    "href": "slides.html#exercise-examine-reproducible-environments-5-minutes",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Examine Reproducible Environments (5 minutes)",
+    "text": "Exercise: Examine Reproducible Environments (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc\n\nHow did they reproduce the environment, or did they?"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-a-lockfile-5-minutes",
+    "href": "slides.html#exercise-look-at-a-lockfile-5-minutes",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at a lockfile (5 minutes)",
+    "text": "Exercise: Look at a lockfile (5 minutes)\n\nR: https://github.com/fhdsl/mcr_example_r - look at renv.lock\nPython: https://github.com/fhdsl/mcr_example_r - look at requirements.txt"
   }
 ]
