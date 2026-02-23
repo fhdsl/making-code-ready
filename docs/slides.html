@@ -201,6 +201,17 @@
 </div>
 
 </section>
+<section id="tl-dr" class="slide level2">
+<h2>TL; DR</h2>
+<ul>
+<li>Reproducibility is a spectrum</li>
+<li>Use separate folders for each of your projects</li>
+<li>Organize code and Data</li>
+<li>Generate lockfiles</li>
+<li>Get Help from DaSL / Open Sci Organizations</li>
+<li>Deposit data where required by papers</li>
+</ul>
+</section>
 <section id="outline" class="slide level2">
 <h2>Outline</h2>
 <ul>
@@ -251,6 +262,13 @@
 <li>Where are you going to share it?</li>
 </ul>
 </section>
+<section id="why-reproducible-analyses-are-not-perfect" class="slide level2">
+<h2>Why: Reproducible Analyses are not perfect</h2>
+<ul>
+<li>They only need to be able to run on another machine</li>
+<li>Don’t let perfect be the enemy of good</li>
+</ul>
+</section>
 <section id="why-languages-are-moving-targets" class="slide level2">
 <h2>Why: Languages are Moving Targets</h2>
 <ul>
@@ -278,13 +296,6 @@
 <section id="what-parts-of-a-reproducible-project" class="title-slide slide level1 center">
 <h1>What: Parts of a Reproducible Project</h1>
 
-</section>
-<section id="reproducible-analyses-are-not-perfect" class="slide level2">
-<h2>Reproducible Analyses are not perfect</h2>
-<ul>
-<li>They only need to be able to run on another machine</li>
-<li>Don’t let perfect be the enemy of good</li>
-</ul>
 </section>
 <section id="what-minimum-information-for-analyses" class="slide level2">
 <h2>What: Minimum Information for Analyses</h2>
@@ -350,8 +361,11 @@
 <p>Pick one of these studies:</p>
 <p>A. <a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></p>
 <p>B. <a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></p>
-<p>C. <a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></p>
+<p>C. <a href="https://github.com/MaayanLab/Zika-RNAseq-Pipeline/">An open RNA-Seq data analysis pipeline tutorial (Python)</a></p>
 <p>Try and answer this question in the <a href="https://docs.google.com/document/d/1HVvvC5GTcclkx7nvc5S9sIrx94mmbImGssjkqo9DdEo/edit?usp=sharing">Google Doc</a></p>
+<ol type="1">
+<li>How was the README? Was it Well Organized?</li>
+</ol>
 </section>
 <section id="what-notebooks-analysis-files" class="slide level2">
 <h2>What: Notebooks / Analysis Files</h2>
@@ -394,8 +408,11 @@
 <p>Pick one of these studies:</p>
 <p>A. <a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></p>
 <p>B. <a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></p>
-<p>C. <a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></p>
+<p>C. <a href="https://github.com/MaayanLab/Zika-RNAseq-Pipeline/">An open RNA-Seq data analysis pipeline tutorial (Python)</a></p>
 <p>Try and answer this question in the <a href="https://docs.google.com/document/d/1HVvvC5GTcclkx7nvc5S9sIrx94mmbImGssjkqo9DdEo/edit?usp=sharing">Google Doc</a></p>
+<ol start="2" type="1">
+<li>How are the Notebooks organized?</li>
+</ol>
 </section>
 <section id="what-know-the-status-of-your-data" class="slide level2">
 <h2>What: Know the status of your data</h2>
@@ -444,8 +461,11 @@
 <p>Pick one of these studies:</p>
 <p>A. <a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></p>
 <p>B. <a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></p>
-<p>C. <a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></p>
+<p>C. <a href="https://github.com/MaayanLab/Zika-RNAseq-Pipeline/">An open RNA-Seq data analysis pipeline tutorial (Python)</a></p>
 <p>Try and answer this question in the <a href="https://docs.google.com/document/d/1HVvvC5GTcclkx7nvc5S9sIrx94mmbImGssjkqo9DdEo/edit?usp=sharing">Google Doc</a></p>
+<ol start="3" type="1">
+<li>How is the data stored (or not stored)?</li>
+</ol>
 </section>
 <section id="what-reproducible-environment" class="slide level2">
 <h2>What: Reproducible Environment</h2>
@@ -458,11 +478,6 @@
 <li><strong>Package Versions</strong></li>
 <li><strong>Software Dependencies</strong></li>
 </ul>
-</section>
-<section id="why-not-conda" class="slide level2">
-<h2>Why not Conda?</h2>
-<p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
-<p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
 </section>
 <section id="what-reproducible-environments" class="slide level2">
 <h2>What: Reproducible Environments</h2>
@@ -563,23 +578,28 @@ C[Dockerfile]
 </div>
 </div>
 </section>
-<section id="exercise-examine-reproducible-environments-5-minutes" class="slide level2">
-<h2>Exercise: Examine Reproducible Environments (5 minutes)</h2>
-<p>Pick one of these studies:</p>
-<p>A. <a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></p>
-<p>B. <a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></p>
-<p>C. <a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></p>
-<p>Try and answer this question in the <a href="https://docs.google.com/document/d/1HVvvC5GTcclkx7nvc5S9sIrx94mmbImGssjkqo9DdEo/edit?usp=sharing">Google Doc</a></p>
-<ol start="4" type="1">
-<li>How did they reproduce the environment, or did they?</li>
-</ol>
-</section>
 <section id="exercise-look-at-a-lockfile-5-minutes" class="slide level2">
 <h2>Exercise: Look at a lockfile (5 minutes)</h2>
 <ul>
 <li>R: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>renv.lock</code></li>
 <li>Python: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>requirements.txt</code></li>
 </ul>
+</section>
+<section id="why-not-conda" class="slide level2">
+<h2>Why not Conda?</h2>
+<p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
+<p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
+</section>
+<section id="exercise-examine-reproducible-environments-5-minutes" class="slide level2">
+<h2>Exercise: Examine Reproducible Environments (5 minutes)</h2>
+<p>Pick one of these studies:</p>
+<p>A. <a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></p>
+<p>B. <a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></p>
+<p>C. <a href="https://github.com/MaayanLab/Zika-RNAseq-Pipeline/">An open RNA-Seq data analysis pipeline tutorial (Python)</a></p>
+<p>Try and answer this question in the <a href="https://docs.google.com/document/d/1HVvvC5GTcclkx7nvc5S9sIrx94mmbImGssjkqo9DdEo/edit?usp=sharing">Google Doc</a></p>
+<ol start="4" type="1">
+<li>How did they reproduce the software environment, or did they?</li>
+</ol>
 </section>
 <section id="what-reproducing-environment-from-lockfile" class="slide level2">
 <h2>What: Reproducing environment from lockfile</h2>
@@ -592,11 +612,9 @@ C[Dockerfile]
 <div class="tab-content">
 <div id="tabset-2-1">
 <ul>
-<li>Make sure that <code>venv</code> is installed</li>
+<li>Make sure that <code>uv</code> is installed</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>venv</span>
-<span id="cb9-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
-<span id="cb9-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>uv sync</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="tabset-2-2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
@@ -654,20 +672,19 @@ C[Dockerfile]
 <li>If making binder ready: test the repository on Binder</li>
 </ul>
 </section>
-<section id="how-review-opportunities" class="slide level2">
-<h2>How: Review Opportunities</h2>
+<section id="how-review-opportunities-and-resources" class="slide level2">
+<h2>How: Review Opportunities and Resources</h2>
 <ul>
 <li>Review Opportunities
 <ul>
-<li>Data House Calls</li>
-<li>PyOpenSci and ROpenSci for code review if you decide to package your code</li>
-<li>WILDS WDL Library</li>
-<li>WILDS Docker Library (?)
+<li><a href="https://ocdo.fredhutch.org/programs/dhc.html">Data House Calls</a></li>
+<li><a href="https://docs.google.com/forms/d/1K3l9fG0i7GgBhBu3sCUpZ7vKeI5i0KtPy_p_5K1wCjc/edit">Community Co-working</a></li>
+<li><a href="https://ocdo.fredhutch.org/programs/wilds.html">WILDS</a>
 <ul>
-<li>If you’re making a package</li>
+<li><a href="https://centernet.fredhutch.org/u/data-science-lab/data-science/wilds-collaborative-projects.html">WILDS Collaborative Projects</a></li>
 </ul></li>
+<li><a href="https://www.pyopensci.org/">PyOpenSci</a> and <a href="https://ropensci.org/">ROpenSci</a> for code review if you decide to package your code</li>
 </ul></li>
-<li>WILDS Collaborative Projects</li>
 </ul>
 </section>
 <section id="how-and-where-sharing-your-analyses" class="slide level2">
@@ -684,7 +701,7 @@ C[Dockerfile]
 <p>Share in a public repository:</p>
 <ul>
 <li>GitHub</li>
-<li>Codeberg</li>
+<li>Codeocean</li>
 <li>ReadtheDocs</li>
 </ul>
 <p>Be aware of file size limitations!</p>
@@ -708,11 +725,12 @@ C[Dockerfile]
 </ul>
 <p><a href="https://journals.plos.org/plosgenetics/s/recommended-repositories#loc-omics" class="uri">https://journals.plos.org/plosgenetics/s/recommended-repositories#loc-omics</a></p>
 </section>
-<section id="tl-dr" class="slide level2">
+<section id="tl-dr-1" class="slide level2">
 <h2>TL; DR</h2>
 <ul>
+<li>Reproducibility is a spectrum</li>
 <li>Use separate folders for each of your projects</li>
-<li>Go down the list of minimal information</li>
+<li>Organize code and Data</li>
 <li>Generate lockfiles</li>
 <li>Get Help from DaSL / Open Sci Organizations</li>
 <li>Deposit data where required by papers</li>
@@ -721,8 +739,8 @@ C[Dockerfile]
 <section id="whats-next" class="slide level2">
 <h2>What’s Next?</h2>
 <ul>
-<li>Package Management for R and Python</li>
-<li>Data Deep Dive on Workflows</li>
+<li>March 9: <a href="https://ocdo.fredhutch.org/dasl/courses/package-management/">Package Management for R and Python</a></li>
+<li>March 11: <a href="https://forms.office.com/r/YPxrxaw421">Data Deep Dive on Workflows</a></li>
 </ul>
 </section>
 <section id="references" class="slide level2">

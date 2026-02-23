@@ -249,7 +249,7 @@
     "href": "slides.html#what-reproducing-environment-from-lockfile",
     "title": "Making Code Ready for Publication",
     "section": "What: Reproducing environment from lockfile",
-    "text": "What: Reproducing environment from lockfile\n\nDownload folder from GitHub\nInstall language version (such as R 3.4.3 orPython 3.13) to your machine\n\n\nPythonR\n\n\n\nMake sure that venv is installed\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
+    "text": "What: Reproducing environment from lockfile\n\nDownload folder from GitHub\nInstall language version (such as R 3.4.3 orPython 3.13) to your machine\n\n\nPythonR\n\n\n\nMake sure that uv is installed\n\nuv sync\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
   },
   {
     "objectID": "slides.html#demo-reproduce-environment-from-lockfile",
@@ -298,7 +298,7 @@
     "href": "slides.html#where-should-you-share-code",
     "title": "Making Code Ready for Publication",
     "section": "Where should you share code?",
-    "text": "Where should you share code?\nShare in a public repository:\n\nGitHub\nCodeberg\nReadtheDocs\n\nBe aware of file size limitations!"
+    "text": "Where should you share code?\nShare in a public repository:\n\nGitHub\nCodeocean\nReadtheDocs\n\nBe aware of file size limitations!"
   },
   {
     "objectID": "slides.html#how-data-repositories",
@@ -312,14 +312,14 @@
     "href": "slides.html#tl-dr",
     "title": "Making Code Ready for Publication",
     "section": "TL; DR",
-    "text": "TL; DR\n\nUse separate folders for each of your projects\nGo down the list of minimal information\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
+    "text": "TL; DR\n\nReproducibility is a spectrum\nUse separate folders for each of your projects\nOrganize code and Data\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
   },
   {
     "objectID": "slides.html#whats-next",
     "href": "slides.html#whats-next",
     "title": "Making Code Ready for Publication",
     "section": "What’s Next?",
-    "text": "What’s Next?\n\nPackage Management for R and Python\nData Deep Dive on Workflows"
+    "text": "What’s Next?\n\nMarch 9: Package Management for R and Python\nMarch 11: Data Deep Dive on Workflows"
   },
   {
     "objectID": "slides.html#references",
@@ -445,21 +445,21 @@
     "href": "slides.html#exercise-look-at-a-readme-5-min",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Look at a README (5 min)",
-    "text": "Exercise: Look at a README (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+    "text": "Exercise: Look at a README (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. An open RNA-Seq data analysis pipeline tutorial (Python)\nTry and answer this question in the Google Doc\n\nHow was the README? Was it Well Organized?"
   },
   {
     "objectID": "slides.html#exercise-look-at-how-notebooks-are-organized-5-min",
     "href": "slides.html#exercise-look-at-how-notebooks-are-organized-5-min",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Look at How Notebooks are Organized (5 min)",
-    "text": "Exercise: Look at How Notebooks are Organized (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+    "text": "Exercise: Look at How Notebooks are Organized (5 min)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. An open RNA-Seq data analysis pipeline tutorial (Python)\nTry and answer this question in the Google Doc\n\nHow are the Notebooks organized?"
   },
   {
     "objectID": "slides.html#exercise-examine-how-data-is-stored-5-minutes",
     "href": "slides.html#exercise-examine-how-data-is-stored-5-minutes",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Examine how data is stored (5 minutes)",
-    "text": "Exercise: Examine how data is stored (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc"
+    "text": "Exercise: Examine how data is stored (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. An open RNA-Seq data analysis pipeline tutorial (Python)\nTry and answer this question in the Google Doc\n\nHow is the data stored (or not stored)?"
   },
   {
     "objectID": "slides.html#exercise-examine-reproducible-environments-5-minuts",
@@ -473,7 +473,7 @@
     "href": "slides.html#exercise-examine-reproducible-environments-5-minutes",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Examine Reproducible Environments (5 minutes)",
-    "text": "Exercise: Examine Reproducible Environments (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\nTry and answer this question in the Google Doc\n\nHow did they reproduce the environment, or did they?"
+    "text": "Exercise: Examine Reproducible Environments (5 minutes)\nPick one of these studies:\nA. Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nB. BeatAML2 Manuscript Workflow (R)\nC. An open RNA-Seq data analysis pipeline tutorial (Python)\nTry and answer this question in the Google Doc\n\nHow did they reproduce the software environment, or did they?"
   },
   {
     "objectID": "slides.html#exercise-look-at-a-lockfile-5-minutes",
@@ -481,5 +481,26 @@
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Look at a lockfile (5 minutes)",
     "text": "Exercise: Look at a lockfile (5 minutes)\n\nR: https://github.com/fhdsl/mcr_example_r - look at renv.lock\nPython: https://github.com/fhdsl/mcr_example_r - look at requirements.txt"
+  },
+  {
+    "objectID": "slides.html#why-reproducible-analyses-are-not-perfect",
+    "href": "slides.html#why-reproducible-analyses-are-not-perfect",
+    "title": "Making Code Ready for Publication",
+    "section": "Why: Reproducible Analyses are not perfect",
+    "text": "Why: Reproducible Analyses are not perfect\n\nThey only need to be able to run on another machine\nDon’t let perfect be the enemy of good"
+  },
+  {
+    "objectID": "slides.html#how-review-opportunities-and-resources",
+    "href": "slides.html#how-review-opportunities-and-resources",
+    "title": "Making Code Ready for Publication",
+    "section": "How: Review Opportunities and Resources",
+    "text": "How: Review Opportunities and Resources\n\nReview Opportunities\n\nData House Calls\nCommunity Co-working\nWILDS\n\nWILDS Collaborative Projects\n\nPyOpenSci and ROpenSci for code review if you decide to package your code"
+  },
+  {
+    "objectID": "slides.html#tl-dr-1",
+    "href": "slides.html#tl-dr-1",
+    "title": "Making Code Ready for Publication",
+    "section": "TL; DR",
+    "text": "TL; DR\n\nReproducibility is a spectrum\nUse separate folders for each of your projects\nOrganize code and Data\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
   }
 ]
