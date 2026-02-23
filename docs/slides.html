@@ -299,6 +299,13 @@
 </ul></li>
 </ul>
 </section>
+<section id="what-separate-folders" class="slide level2">
+<h2>What: Separate Folders</h2>
+<ul>
+<li>Ensures portability across platforms</li>
+<li></li>
+</ul>
+</section>
 <section id="what-project-example" class="slide level2">
 <h2>What: Project Example:</h2>
 <pre><code>my_project/                 ## Top level
@@ -313,12 +320,21 @@
 └── README.md</code></pre>
 <p><a href="https://rstats.wtf/projects" class="uri">https://rstats.wtf/projects</a></p>
 </section>
+<section id="more-project-examples" class="slide level2">
+<h2>More project examples</h2>
+<ul>
+<li><a href="https://github.com/leipzig/awesome-reproducible-research" class="uri">https://github.com/leipzig/awesome-reproducible-research</a></li>
+</ul>
+</section>
 <section id="what-readme" class="slide level2">
 <h2>What: README</h2>
 <pre><code>my_project/                ## Top level
 └── README.md</code></pre>
 
-<img data-src="workflow.png" class="r-stretch quarto-figure-center"><p class="caption">workflow.png</p><ul>
+<img data-src="workflow.png" class="r-stretch quarto-figure-center"><p class="caption">workflow.png</p></section>
+<section id="what-readme-1" class="slide level2">
+<h2>What: README</h2>
+<ul>
 <li>First thing that people will see
 <ul>
 <li>https://github.com/biodev/HNSCC_Notebook</li>
@@ -328,6 +344,18 @@
 <li>How does the data come together in the analysis?</li>
 </ul></li>
 </ul>
+</section>
+<section id="exercise-look-at-a-readme" class="slide level2">
+<h2>Exercise: Look at a README</h2>
+<ul>
+<li><a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></li>
+<li><a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></li>
+<li><a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></li>
+</ul>
+<p>Try and answer these questions</p>
+<ol type="1">
+<li>How was the README? Was it clear?</li>
+</ol>
 </section>
 <section id="what-notebooks-analysis-files" class="slide level2">
 <h2>What: Notebooks / Analysis Files</h2>
@@ -345,8 +373,8 @@
 <li>Be sure to include a random seed for reproducibility</li>
 </ul>
 </section>
-<section id="relative-paths" class="slide level2">
-<h2>Relative Paths</h2>
+<section id="what-notebooks-relative-paths" class="slide level2">
+<h2>What: Notebooks / Relative Paths</h2>
 <ul>
 <li>Everything should be runnable from the top folder of the project. Put data in <code>data/</code> folder. Use relative paths from the top project folder:</li>
 </ul>
@@ -354,8 +382,28 @@
 <ul>
 <li>Ensures portability of project</li>
 </ul>
-<p>Example of a reproducible project:</p>
-<p><a href="https://github.com/biodev/beataml2_manuscript">https://github.com/biodev/beataml2_manuscript</a></p>
+</section>
+<section id="what-targets-and-workflow-builders" class="slide level2">
+<h2>What: <code>{targets}</code> and Workflow Builders</h2>
+<ul>
+<li>Not 100% Necessary!</li>
+<li>Another layer of complexity, but can be helpful</li>
+<li>Lets you chain together notebooks</li>
+<li>A lot like snakemake</li>
+</ul>
+<p>Targets example: <a href="https://github.com/biodev/hnscc_manuscript" class="uri">https://github.com/biodev/hnscc_manuscript</a></p>
+</section>
+<section id="exercise-look-at-how-notebooks-are-organized" class="slide level2">
+<h2>Exercise: Look at How Notebooks are Organized</h2>
+<ul>
+<li><a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></li>
+<li><a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></li>
+<li><a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></li>
+</ul>
+<p>Try and answer these questions:</p>
+<ol start="2" type="1">
+<li>How were the notebooks organized?</li>
+</ol>
 </section>
 <section id="what-know-the-status-of-your-data" class="slide level2">
 <h2>What: Know the status of your data</h2>
@@ -372,47 +420,49 @@
 <ul>
 <li>Genomic and omics data is large
 <ul>
-<li>raw data is not practical for GitHub (100 Mb limit)</li>
-<li>Store raw files in required respositories for your field
-<ul>
-<li>dbGAP</li>
-</ul></li>
-<li>track what files were processed (manifest)</li>
+<li>Raw data is not practical for GitHub (100 Mb limit)</li>
+<li>Store raw files in required respositories for your field</li>
+<li>Track what files were processed (manifest)</li>
 </ul></li>
 <li>Supply intermediate formats used to do the analysis, if possible:
 <ul>
-<li>MAF</li>
-<li>VCF</li>
-<li>CSV</li>
+<li>MAF/VCF/CSV</li>
 </ul></li>
 </ul>
-</section>
-<section id="what-a-note-about-data" class="slide level2">
-<h2>What: A Note about data</h2>
 <p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11312195/">Reproducibility in the Genomics Era</a></p>
+</section>
+<section id="what-data" class="slide level2">
+<h2>What: Data</h2>
 <ul>
-<li>Large genomic data - sharing raw data is impractical in a project
+<li><p>With code, share metadata - list the files you processed</p>
 <ul>
-<li>Use Intermediate formats instead, such as VCF files, CSV files</li>
-<li>Use <code>.gitignore</code> file to exclude large files</li>
-</ul></li>
-<li>With code, share metadata - list the files you processed
-<ul>
+<li>File manifest - point towards data repositories</li>
 <li>JSON files from workflows</li>
 <li>Metadata / Experimental Design
 <ul>
 <li>Where does each sample fit into Experimental Design?</li>
 </ul></li>
 </ul></li>
+<li><p>Stay tuned - we may offer a data management workshop this Summer</p></li>
+<li><p><a href="https://arxiv.org/pdf/2002.11626">A Realistic Guide to Making Data Available Alongside Code</a></p></li>
 </ul>
+</section>
+<section id="exercise-examine-one-of-these-code-repositories" class="slide level2">
+<h2>Exercise: Examine one of these Code Repositories</h2>
+<ul>
+<li><a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></li>
+<li><a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></li>
+<li><a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></li>
+</ul>
+<p>Try and answer these questions:</p>
+<ol start="3" type="1">
+<li>How is the data stored (or not stored)?</li>
+</ol>
 </section>
 <section id="what-reproducible-environment" class="slide level2">
 <h2>What: Reproducible Environment</h2>
-<ul>
-<li>Reproducible Environment:</li>
-</ul>
 <blockquote>
-<p>a computational environment is the system where a program is run.</p>
+<p>A Reproducible Environment is a computational environment is the system where a program is run.</p>
 </blockquote>
 <ul>
 <li>Operating System/Platform</li>
@@ -420,6 +470,11 @@
 <li><strong>Package Versions</strong></li>
 <li><strong>Software Dependencies</strong></li>
 </ul>
+</section>
+<section id="why-not-conda" class="slide level2">
+<h2>Why not Conda?</h2>
+<p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
+<p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
 </section>
 <section id="what-reproducible-environments" class="slide level2">
 <h2>What: Reproducible Environments</h2>
@@ -439,22 +494,7 @@ C[Dockerfile]
 </div>
 </div>
 </div>
-<p>There is a tradeoff between - Effort on your side - Ease of Use on User End</p>
-</section>
-<section id="what-lockfile" class="slide level2">
-<h2>What: Lockfile</h2>
-<pre><code>my_project/                ## Top level
-├── renv.lock   
-├── requirements.txt</code></pre>
-<ul>
-<li>List of packages and versions that you used in analysis</li>
-<li>Post analysis:
-<ul>
-<li>Python: <code>pip freeze &gt; requirements.txt</code></li>
-<li>R: <code>renv::snapshot()</code></li>
-</ul></li>
-<li>Talk about <code>rv</code> and <code>uv</code> in Package management session</li>
-</ul>
+<p>There is a tradeoff between - Effort on your side (Lockfile is least effort) - Ease of Use on User End (Dockerfile is most effort)</p>
 </section>
 <section id="what-lockfiles-and-environments" class="slide level2">
 <h2>What: Lockfiles and Environments</h2>
@@ -468,8 +508,18 @@ C[Dockerfile]
 <li>Environments live in our folder isolated from everything else
 <ul>
 <li>Versions of R/Python</li>
-<li></li>
+<li>Libraries of packages</li>
 </ul></li>
+</ul>
+</section>
+<section id="what-lockfile" class="slide level2">
+<h2>What: Lockfile</h2>
+<pre><code>my_project/                ## Top level
+├── renv.lock              ## R
+├── requirements.txt       ## Python</code></pre>
+<ul>
+<li>List of packages and versions that you used in analysis</li>
+<li>Talk about <code>rv</code> and <code>uv</code> in Package management session</li>
 </ul>
 </section>
 <section id="lockfile-examples" class="slide level2">
@@ -525,20 +575,38 @@ C[Dockerfile]
 </div>
 </div>
 </section>
+<section id="exercise-examine-one-of-these-code-repositories-1" class="slide level2">
+<h2>Exercise: Examine one of these Code Repositories</h2>
+<ul>
+<li><a href="https://codeocean.com/capsule/0566399/tree/v1">Integrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)</a></li>
+<li><a href="https://github.com/biodev/beataml2_manuscript">BeatAML2 Manuscript Workflow (R)</a></li>
+<li><a href="https://github.com/SBRG/Strain_characterization_workflow/blob/master/README.md">Characterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)</a></li>
+</ul>
+<p>Try and answer these questions:</p>
+<ol start="4" type="1">
+<li>How did they reproduce the environment, or did they?</li>
+</ol>
+</section>
 <section id="exercise-look-at-a-lockfile" class="slide level2">
 <h2>Exercise: Look at a lockfile</h2>
 <ul>
 <li>R: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>renv.lock</code></li>
-<li>nPython: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>requirements.txt</code> and <code>uv.lock</code></li>
+<li>Python: <a href="https://github.com/fhdsl/mcr_example_r" class="uri">https://github.com/fhdsl/mcr_example_r</a> - look at <code>requirements.txt</code></li>
 </ul>
 </section>
 <section id="what-reproducing-environment-from-lockfile" class="slide level2">
 <h2>What: Reproducing environment from lockfile</h2>
-<p>Give zipped folder to someone else or host on github</p>
+<ul>
+<li>Download folder from GitHub</li>
+<li>Install language version (such as <code>R 3.4.3</code> or<code>Python 3.13</code>) to your machine</li>
+</ul>
 <div class="panel-tabset">
 <ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Python</a></li><li><a href="#tabset-2-2">R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1">
+<ul>
+<li>Make sure that <code>venv</code> is installed</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a></a>venv</span>
 <span id="cb9-2"><a></a>source venv<span class="op">/</span><span class="bu">bin</span><span class="op">/</span>activate</span>
 <span id="cb9-3"><a></a>pip install <span class="op">-</span>r requirements.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -550,8 +618,8 @@ C[Dockerfile]
 </div>
 </div>
 </section>
-<section id="exercise-reproduce-environment-from-lockfile" class="slide level2">
-<h2>Exercise: reproduce environment from lockfile</h2>
+<section id="demo-reproduce-environment-from-lockfile" class="slide level2">
+<h2>Demo: reproduce environment from lockfile</h2>
 <p><a href="./restore_activity.html">Exercise 2</a></p>
 </section>
 <section id="what-making-a-lockfile-from-your-current-project" class="slide level2">
@@ -564,11 +632,15 @@ C[Dockerfile]
 <ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Python</a></li><li><a href="#tabset-3-2">R</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1">
+<p>Put this code at the bottom of your notebook.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a></a><span class="co"># pip install session-info</span></span>
 <span id="cb11-2"><a></a><span class="co"># uv add session-info</span></span>
 <span id="cb11-3"><a></a><span class="im">import</span> session_info <span class="im">as</span> si</span>
 <span id="cb11-4"><a></a><span class="co"># put this at the end of your notebook</span></span>
-<span id="cb11-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  write_req_file<span class="op">=</span><span class="va">True</span>, req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-5"><a></a>si.show(na<span class="op">=</span><span class="va">True</span>, os<span class="op">=</span><span class="va">True</span>, cpu<span class="op">=</span><span class="va">False</span>, </span>
+<span id="cb11-6"><a></a>    jupyter<span class="op">=</span><span class="va">None</span>, dependencies<span class="op">=</span><span class="va">None</span>,  </span>
+<span id="cb11-7"><a></a>    write_req_file<span class="op">=</span><span class="va">True</span>, </span>
+<span id="cb11-8"><a></a>    req_file_name<span class="op">=</span><span class="st">"requirements.txt"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Install the <a href="https://pypi.org/project/session-info/">session-info package</a></li>
 </ul>
@@ -577,17 +649,20 @@ C[Dockerfile]
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># install.packages("renv")</span></span>
 <span id="cb12-2"><a></a>renv<span class="sc">::</span><span class="fu">snapshot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
+<li><code>renv</code> will scan your project and note package versions</li>
 <li>Can use the <code>renv</code> package to generate a current list of packages</li>
 <li>Does not require a virtual environment to be initialized</li>
+<li>Generates <code>renv.lock</code></li>
 </ul>
 </div>
 </div>
 </div>
 </section>
-<section id="why-not-conda" class="slide level2">
-<h2>Why not Conda?</h2>
-<p>Anaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.</p>
-<p>For more info: <a href="https://conda-forge.fredhutch.org/" class="uri">https://conda-forge.fredhutch.org/</a></p>
+<section id="migrate-to-rv-r-uv-python" class="slide level2">
+<h2>Migrate to <code>rv</code> (R) /<code>uv</code> (Python)</h2>
+<ul>
+<li><code>rv</code> and <code>uv</code> include Python versions</li>
+</ul>
 </section></section>
 <section>
 <section id="how" class="title-slide slide level1 center">
@@ -654,6 +729,39 @@ C[Dockerfile]
 </ul></li>
 </ul></li>
 </ul>
+<p><a href="https://journals.plos.org/plosgenetics/s/recommended-repositories#loc-omics" class="uri">https://journals.plos.org/plosgenetics/s/recommended-repositories#loc-omics</a></p>
+</section>
+<section id="tl-dr" class="slide level2">
+<h2>TL; DR</h2>
+<ul>
+<li>Use separate folders for each of your projects</li>
+<li>Go down the list</li>
+<li>Generate lockfiles</li>
+<li>Get Help from DaSL / Open Sci Organizations</li>
+<li>Deposit data where required by papers</li>
+</ul>
+</section>
+<section id="whats-next" class="slide level2">
+<h2>What’s Next?</h2>
+<ul>
+<li>Package Management for R and Python</li>
+<li>Data Deep Dive on Workflows</li>
+</ul>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<ul>
+<li><a href="https://book.the-turing-way.org/reproducible-research/compendia/" class="uri">https://book.the-turing-way.org/reproducible-research/compendia/</a></li>
+<li><a href="https://github.com/leipzig/awesome-reproducible-research" class="uri">https://github.com/leipzig/awesome-reproducible-research</a></li>
+<li><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510" class="uri">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510</a></li>
+<li><a href="https://openscapes.github.io/series/core-lessons/coding-strategies.html" class="uri">https://openscapes.github.io/series/core-lessons/coding-strategies.html</a></li>
+<li><a href="https://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html" class="uri">https://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html</a></li>
+<li><a href="https://www.nature.com/articles/s41467-021-25974-w" class="uri">https://www.nature.com/articles/s41467-021-25974-w</a></li>
+<li><a href="https://journals.plos.org/plosone/s/materials-software-and-code-sharing" class="uri">https://journals.plos.org/plosone/s/materials-software-and-code-sharing</a> - Materials, Software and Code</li>
+<li><a href="https://osf.io/cb7z8/files/numa5" class="uri">https://osf.io/cb7z8/files/numa5</a> - AGILE Reproducible Paper Guidelines</li>
+<li><a href="https://binderhub.readthedocs.io/en/latest/overview.html" class="uri">https://binderhub.readthedocs.io/en/latest/overview.html</a></li>
+<li><a href="https://book.the-turing-way.org/reproducible-research/code-reuse" class="uri">https://book.the-turing-way.org/reproducible-research/code-reuse</a></li>
+</ul>
 </section></section>
 <section>
 <section id="advanced-topics" class="title-slide slide level1 center">
@@ -696,18 +804,9 @@ C[Dockerfile]
 <section id="some-cons-about-binder" class="slide level2">
 <h2>Some Cons about Binder</h2>
 <ul>
-<li>Currently limited to 1 Gb of memory for an instance</li>
+<li>Currently limited to 2 Gb of memory for an instance</li>
 <li>If your image files aren’t used at least once a week, they get deleted</li>
 </ul>
-</section>
-<section id="targets-and-workflow-builders" class="slide level2">
-<h2><code>{targets}</code> and Workflow Builders</h2>
-<ul>
-<li>Another layer of complexity</li>
-<li>Lets you chain together notebooks</li>
-<li>A lot like snakemake</li>
-</ul>
-<p>Targets example: <a href="https://github.com/biodev/hnscc_manuscript" class="uri">https://github.com/biodev/hnscc_manuscript</a></p>
 </section>
 <section id="dockerfile" class="slide level2">
 <h2>Dockerfile</h2>
@@ -749,20 +848,6 @@ RUN Rscript
 <ul>
 <li>Currently investigating Nix as a language agnostic reproducibility framework</li>
 </ul>
-</section>
-<section id="references" class="slide level2">
-<h2>References</h2>
-<ul>
-<li><a href="https://book.the-turing-way.org/reproducible-research/compendia/" class="uri">https://book.the-turing-way.org/reproducible-research/compendia/</a></li>
-<li>https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510</li>
-<li>https://openscapes.github.io/series/core-lessons/coding-strategies.html</li>
-<li>https://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html</li>
-<li>https://www.nature.com/articles/s41467-021-25974-w</li>
-<li>https://journals.plos.org/plosone/s/materials-software-and-code-sharing - Materials, Software and Code</li>
-<li>https://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines</li>
-<li>https://binderhub.readthedocs.io/en/latest/overview.html</li>
-</ul>
-<p>Source: https://book.the-turing-way.org/reproducible-research/code-reuse</p>
 
 
 </section></section>

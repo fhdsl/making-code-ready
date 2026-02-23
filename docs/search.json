@@ -91,6 +91,13 @@
     "text": "What: Minimum Information for Analyses\n\nFocus on Data Analysis in R / Python\nOrganize your analysis in a folder and share in a repository\n\nREADME\nNotebook(s) / Scripts\nData (if small enough)\nLockfile"
   },
   {
+    "objectID": "slides.html#what-separate-folders",
+    "href": "slides.html#what-separate-folders",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Separate Folders",
+    "text": "What: Separate Folders\n\nEnsures portability across platforms"
+  },
+  {
     "objectID": "slides.html#what-project-example",
     "href": "slides.html#what-project-example",
     "title": "Making Code Ready for Publication",
@@ -98,11 +105,32 @@
     "text": "What: Project Example:\nmy_project/                 ## Top level\n├── data/                   ## Data directory\n│   └── my_data.vcf  \n├─- output/                 ## Share output    \n└── 01_preprocessing.R      ## Scripts in order\n└── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n├── renv.lock               ## R Packages \n├── requirements.txt        ## Python Packages\n└── README.md\nhttps://rstats.wtf/projects"
   },
   {
+    "objectID": "slides.html#more-project-examples",
+    "href": "slides.html#more-project-examples",
+    "title": "Making Code Ready for Publication",
+    "section": "More project examples",
+    "text": "More project examples\n\nhttps://github.com/leipzig/awesome-reproducible-research"
+  },
+  {
     "objectID": "slides.html#what-readme",
     "href": "slides.html#what-readme",
     "title": "Making Code Ready for Publication",
     "section": "What: README",
-    "text": "What: README\nmy_project/                ## Top level\n└── README.md\n\nworkflow.png\nFirst thing that people will see\n\nhttps://github.com/biodev/HNSCC_Notebook\n\nDocument the basic workflow of processing\n\nHow does the data come together in the analysis?"
+    "text": "What: README\nmy_project/                ## Top level\n└── README.md\n\nworkflow.png"
+  },
+  {
+    "objectID": "slides.html#what-readme-1",
+    "href": "slides.html#what-readme-1",
+    "title": "Making Code Ready for Publication",
+    "section": "What: README",
+    "text": "What: README\n\nFirst thing that people will see\n\nhttps://github.com/biodev/HNSCC_Notebook\n\nDocument the basic workflow of processing\n\nHow does the data come together in the analysis?"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-a-readme",
+    "href": "slides.html#exercise-look-at-a-readme",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at a README",
+    "text": "Exercise: Look at a README\n\nIntegrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nBeatAML2 Manuscript Workflow (R)\nCharacterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\n\nTry and answer these questions\n\nHow was the README? Was it clear?"
   },
   {
     "objectID": "slides.html#what-notebooks-analysis-files",
@@ -112,11 +140,25 @@
     "text": "What: Notebooks / Analysis Files\nmy_project/                ## Top level    \n├── 01_preprocessing.R     ## Scripts in order\n├── 02_deseq2_analysis.qmd\n└── 03_visualization.ipynb\n\nEasiest: place in your top folder\nNumber in order\n\n01_preprocessing.R\n02_deseq2_analysis.qmd\n\nBe sure to include a random seed for reproducibility"
   },
   {
-    "objectID": "slides.html#relative-paths",
-    "href": "slides.html#relative-paths",
+    "objectID": "slides.html#what-notebooks-relative-paths",
+    "href": "slides.html#what-notebooks-relative-paths",
     "title": "Making Code Ready for Publication",
-    "section": "Relative Paths",
-    "text": "Relative Paths\n\nEverything should be runnable from the top folder of the project. Put data in data/ folder. Use relative paths from the top project folder:\n\nmy_data &lt;- readr::read_csv(\"data/datafile.csv\")\n\nEnsures portability of project\n\nExample of a reproducible project:\nhttps://github.com/biodev/beataml2_manuscript"
+    "section": "What: Notebooks / Relative Paths",
+    "text": "What: Notebooks / Relative Paths\n\nEverything should be runnable from the top folder of the project. Put data in data/ folder. Use relative paths from the top project folder:\n\nmy_data &lt;- readr::read_csv(\"data/datafile.csv\")\n\nEnsures portability of project"
+  },
+  {
+    "objectID": "slides.html#what-targets-and-workflow-builders",
+    "href": "slides.html#what-targets-and-workflow-builders",
+    "title": "Making Code Ready for Publication",
+    "section": "What: {targets} and Workflow Builders",
+    "text": "What: {targets} and Workflow Builders\n\nNot 100% Necessary!\nAnother layer of complexity, but can be helpful\nLets you chain together notebooks\nA lot like snakemake\n\nTargets example: https://github.com/biodev/hnscc_manuscript"
+  },
+  {
+    "objectID": "slides.html#exercise-look-at-how-notebooks-are-organized",
+    "href": "slides.html#exercise-look-at-how-notebooks-are-organized",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Look at How Notebooks are Organized",
+    "text": "Exercise: Look at How Notebooks are Organized\n\nIntegrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nBeatAML2 Manuscript Workflow (R)\nCharacterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\n\nTry and answer these questions:\n\nHow were the notebooks organized?"
   },
   {
     "objectID": "slides.html#what-know-the-status-of-your-data",
@@ -130,42 +172,56 @@
     "href": "slides.html#what-data-in-a-project",
     "title": "Making Code Ready for Publication",
     "section": "What: Data in a Project",
-    "text": "What: Data in a Project\nmy_project/                ## Top level\n├── data                   ## Data directory\n│   └── my_data.vcf  \n\nGenomic and omics data is large\n\nraw data is not practical for GitHub (100 Mb limit)\nStore raw files in required respositories for your field\n\ndbGAP\n\ntrack what files were processed (manifest)\n\nSupply intermediate formats used to do the analysis, if possible:\n\nMAF\nVCF\nCSV"
+    "text": "What: Data in a Project\nmy_project/                ## Top level\n├── data                   ## Data directory\n│   └── my_data.vcf  \n\nGenomic and omics data is large\n\nRaw data is not practical for GitHub (100 Mb limit)\nStore raw files in required respositories for your field\nTrack what files were processed (manifest)\n\nSupply intermediate formats used to do the analysis, if possible:\n\nMAF/VCF/CSV\n\n\nReproducibility in the Genomics Era"
   },
   {
-    "objectID": "slides.html#what-a-note-about-data",
-    "href": "slides.html#what-a-note-about-data",
+    "objectID": "slides.html#what-data",
+    "href": "slides.html#what-data",
     "title": "Making Code Ready for Publication",
-    "section": "What: A Note about data",
-    "text": "What: A Note about data\nReproducibility in the Genomics Era\n\nLarge genomic data - sharing raw data is impractical in a project\n\nUse Intermediate formats instead, such as VCF files, CSV files\nUse .gitignore file to exclude large files\n\nWith code, share metadata - list the files you processed\n\nJSON files from workflows\nMetadata / Experimental Design\n\nWhere does each sample fit into Experimental Design?"
+    "section": "What: Data",
+    "text": "What: Data\n\nWith code, share metadata - list the files you processed\n\nFile manifest - point towards data repositories\nJSON files from workflows\nMetadata / Experimental Design\n\nWhere does each sample fit into Experimental Design?\n\n\nStay tuned - we may offer a data management workshop this Summer\nA Realistic Guide to Making Data Available Alongside Code"
+  },
+  {
+    "objectID": "slides.html#exercise-examine-one-of-these-code-repositories",
+    "href": "slides.html#exercise-examine-one-of-these-code-repositories",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Examine one of these Code Repositories",
+    "text": "Exercise: Examine one of these Code Repositories\n\nIntegrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nBeatAML2 Manuscript Workflow (R)\nCharacterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\n\nTry and answer these questions:\n\nHow is the data stored (or not stored)?"
   },
   {
     "objectID": "slides.html#what-reproducible-environment",
     "href": "slides.html#what-reproducible-environment",
     "title": "Making Code Ready for Publication",
     "section": "What: Reproducible Environment",
-    "text": "What: Reproducible Environment\n\nReproducible Environment:\n\n\na computational environment is the system where a program is run.\n\n\nOperating System/Platform\nLanguage Version\nPackage Versions\nSoftware Dependencies"
+    "text": "What: Reproducible Environment\n\nA Reproducible Environment is a computational environment is the system where a program is run.\n\n\nOperating System/Platform\nLanguage Version\nPackage Versions\nSoftware Dependencies"
+  },
+  {
+    "objectID": "slides.html#why-not-conda",
+    "href": "slides.html#why-not-conda",
+    "title": "Making Code Ready for Publication",
+    "section": "Why not Conda?",
+    "text": "Why not Conda?\nAnaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.\nFor more info: https://conda-forge.fredhutch.org/"
   },
   {
     "objectID": "slides.html#what-reproducible-environments",
     "href": "slides.html#what-reproducible-environments",
     "title": "Making Code Ready for Publication",
     "section": "What: Reproducible Environments",
-    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph LR\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]\n\n\n\n\n\n\nThere is a tradeoff between - Effort on your side - Ease of Use on User End"
-  },
-  {
-    "objectID": "slides.html#what-lockfile",
-    "href": "slides.html#what-lockfile",
-    "title": "Making Code Ready for Publication",
-    "section": "What: Lockfile",
-    "text": "What: Lockfile\nmy_project/                ## Top level\n├── renv.lock   \n├── requirements.txt\n\nList of packages and versions that you used in analysis\nPost analysis:\n\nPython: pip freeze &gt; requirements.txt\nR: renv::snapshot()\n\nTalk about rv and uv in Package management session"
+    "text": "What: Reproducible Environments\nIn order of complexity:\n\n\n\n\n\ngraph LR\nA[Lockfile] --&gt; B\nB[Binder Ready] --&gt; C\nC[Dockerfile]\n\n\n\n\n\n\nThere is a tradeoff between - Effort on your side (Lockfile is least effort) - Ease of Use on User End (Dockerfile is most effort)"
   },
   {
     "objectID": "slides.html#what-lockfiles-and-environments",
     "href": "slides.html#what-lockfiles-and-environments",
     "title": "Making Code Ready for Publication",
     "section": "What: Lockfiles and Environments",
-    "text": "What: Lockfiles and Environments\n\nLockfiles are a recipe for recreating an environment\nWe use tools to recreate them:\n\nR: renv and rv\nPython: venv and uv\n\nEnvironments live in our folder isolated from everything else\n\nVersions of R/Python"
+    "text": "What: Lockfiles and Environments\n\nLockfiles are a recipe for recreating an environment\nWe use tools to recreate them:\n\nR: renv and rv\nPython: venv and uv\n\nEnvironments live in our folder isolated from everything else\n\nVersions of R/Python\nLibraries of packages"
+  },
+  {
+    "objectID": "slides.html#what-lockfile",
+    "href": "slides.html#what-lockfile",
+    "title": "Making Code Ready for Publication",
+    "section": "What: Lockfile",
+    "text": "What: Lockfile\nmy_project/                ## Top level\n├── renv.lock              ## R\n├── requirements.txt       ## Python\n\nList of packages and versions that you used in analysis\nTalk about rv and uv in Package management session"
   },
   {
     "objectID": "slides.html#lockfile-examples",
@@ -175,39 +231,46 @@
     "text": "Lockfile Examples\n\nRPython\n\n\n{\n  \"R\": {\n    \"Version\": \"4.2.3\",\n    \"Repositories\": [\n      {\n        \"Name\": \"CRAN\",\n        \"URL\": \"https://cloud.r-project.org\"\n      }\n    ]\n  },\n  \"Packages\": {\n    \"markdown\": {\n      \"Package\": \"markdown\",\n      \"Version\": \"1.0\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"4584a57f565dd7987d59dda3a02cfb41\"\n    },\n    \"mime\": {\n      \"Package\": \"mime\",\n      \"Version\": \"0.7\",\n      \"Source\": \"Repository\",\n      \"Repository\": \"CRAN\",\n      \"Hash\": \"908d95ccbfd1dd274073ef07a7c93934\"\n    }\n  }\n}\n\n\nanyio==4.11.0\nappnope==0.1.4\nargon2-cffi==25.1.0\nargon2-cffi-bindings==25.1.0\narrow==1.3.0\nasttokens==3.0.0\nasync-lru==2.0.5\nattrs==25.3.0\nbabel==2.17.0\nbeautifulsoup4==4.13.5\nbleach==6.2.0\ncertifi==2025.8.3\ncffi==2.0.0\n[...]"
   },
   {
+    "objectID": "slides.html#exercise-examine-one-of-these-code-repositories-1",
+    "href": "slides.html#exercise-examine-one-of-these-code-repositories-1",
+    "title": "Making Code Ready for Publication",
+    "section": "Exercise: Examine one of these Code Repositories",
+    "text": "Exercise: Examine one of these Code Repositories\n\nIntegrative Pharmacogenomics Analysis of Patient Derived Xenografts (R)\nBeatAML2 Manuscript Workflow (R)\nCharacterizing Strain Variation in Engineered E. coli Using a Multi-omics Based Workflow (Python)\n\nTry and answer these questions:\n\nHow did they reproduce the environment, or did they?"
+  },
+  {
     "objectID": "slides.html#exercise-look-at-a-lockfile",
     "href": "slides.html#exercise-look-at-a-lockfile",
     "title": "Making Code Ready for Publication",
     "section": "Exercise: Look at a lockfile",
-    "text": "Exercise: Look at a lockfile\n\nR: https://github.com/fhdsl/mcr_example_r - look at renv.lock\nnPython: https://github.com/fhdsl/mcr_example_r - look at requirements.txt and uv.lock"
+    "text": "Exercise: Look at a lockfile\n\nR: https://github.com/fhdsl/mcr_example_r - look at renv.lock\nPython: https://github.com/fhdsl/mcr_example_r - look at requirements.txt"
   },
   {
     "objectID": "slides.html#what-reproducing-environment-from-lockfile",
     "href": "slides.html#what-reproducing-environment-from-lockfile",
     "title": "Making Code Ready for Publication",
     "section": "What: Reproducing environment from lockfile",
-    "text": "What: Reproducing environment from lockfile\nGive zipped folder to someone else or host on github\n\nPythonR\n\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
+    "text": "What: Reproducing environment from lockfile\n\nDownload folder from GitHub\nInstall language version (such as R 3.4.3 orPython 3.13) to your machine\n\n\nPythonR\n\n\n\nMake sure that venv is installed\n\nvenv\nsource venv/bin/activate\npip install -r requirements.txt\n\n\ninstall.packages(\"renv\")\nrenv::restore()"
   },
   {
-    "objectID": "slides.html#exercise-reproduce-environment-from-lockfile",
-    "href": "slides.html#exercise-reproduce-environment-from-lockfile",
+    "objectID": "slides.html#demo-reproduce-environment-from-lockfile",
+    "href": "slides.html#demo-reproduce-environment-from-lockfile",
     "title": "Making Code Ready for Publication",
-    "section": "Exercise: reproduce environment from lockfile",
-    "text": "Exercise: reproduce environment from lockfile\nExercise 2"
+    "section": "Demo: reproduce environment from lockfile",
+    "text": "Demo: reproduce environment from lockfile\nExercise 2"
   },
   {
     "objectID": "slides.html#what-making-a-lockfile-from-your-current-project",
     "href": "slides.html#what-making-a-lockfile-from-your-current-project",
     "title": "Making Code Ready for Publication",
     "section": "What: Making a Lockfile from your current project",
-    "text": "What: Making a Lockfile from your current project\n\nUsually done after you execute a notebook\nTakes the packages you have loaded into memory and then writes them to lockfile with versions.\n\n\nPythonR\n\n\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, jupyter=None, dependencies=None,  write_req_file=True, req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized"
+    "text": "What: Making a Lockfile from your current project\n\nUsually done after you execute a notebook\nTakes the packages you have loaded into memory and then writes them to lockfile with versions.\n\n\nPythonR\n\n\nPut this code at the bottom of your notebook.\n# pip install session-info\n# uv add session-info\nimport session_info as si\n# put this at the end of your notebook\nsi.show(na=True, os=True, cpu=False, \n    jupyter=None, dependencies=None,  \n    write_req_file=True, \n    req_file_name=\"requirements.txt\")\n\nInstall the session-info package\n\n\n\n# install.packages(\"renv\")\nrenv::snapshot()\n\nrenv will scan your project and note package versions\nCan use the renv package to generate a current list of packages\nDoes not require a virtual environment to be initialized\nGenerates renv.lock"
   },
   {
-    "objectID": "slides.html#why-not-conda",
-    "href": "slides.html#why-not-conda",
+    "objectID": "slides.html#migrate-to-rv-r-uv-python",
+    "href": "slides.html#migrate-to-rv-r-uv-python",
     "title": "Making Code Ready for Publication",
-    "section": "Why not Conda?",
-    "text": "Why not Conda?\nAnaconda is charging institutions for using their forge - be aware that you will need to pay charges or change your forge to the Fred Hutch version.\nFor more info: https://conda-forge.fredhutch.org/"
+    "section": "Migrate to rv (R) /uv (Python)",
+    "text": "Migrate to rv (R) /uv (Python)\n\nrv and uv include Python versions"
   },
   {
     "objectID": "slides.html#how-and-where-testing-your-shared-project",
@@ -242,7 +305,28 @@
     "href": "slides.html#how-data-repositories",
     "title": "Making Code Ready for Publication",
     "section": "How: Data Repositories",
-    "text": "How: Data Repositories\n\nData repositories\n\nOpen Science Framework\nRequired databases (dbGAP)\nBe aware that you will need to provide metadata\n\nExperimental design\n\nBe careful when sharing human subjects data\n\nIf unsure, schedule a Data Governance House Call"
+    "text": "How: Data Repositories\n\nData repositories\n\nOpen Science Framework\nRequired databases (dbGAP)\nBe aware that you will need to provide metadata\n\nExperimental design\n\nBe careful when sharing human subjects data\n\nIf unsure, schedule a Data Governance House Call\n\n\n\nhttps://journals.plos.org/plosgenetics/s/recommended-repositories#loc-omics"
+  },
+  {
+    "objectID": "slides.html#tl-dr",
+    "href": "slides.html#tl-dr",
+    "title": "Making Code Ready for Publication",
+    "section": "TL; DR",
+    "text": "TL; DR\n\nUse separate folders for each of your projects\nGo down the list\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
+  },
+  {
+    "objectID": "slides.html#whats-next",
+    "href": "slides.html#whats-next",
+    "title": "Making Code Ready for Publication",
+    "section": "What’s Next?",
+    "text": "What’s Next?\n\nPackage Management for R and Python\nData Deep Dive on Workflows"
+  },
+  {
+    "objectID": "slides.html#references",
+    "href": "slides.html#references",
+    "title": "Making Code Ready for Publication",
+    "section": "References",
+    "text": "References\n\nhttps://book.the-turing-way.org/reproducible-research/compendia/\nhttps://github.com/leipzig/awesome-reproducible-research\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510\nhttps://openscapes.github.io/series/core-lessons/coding-strategies.html\nhttps://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html\nhttps://www.nature.com/articles/s41467-021-25974-w\nhttps://journals.plos.org/plosone/s/materials-software-and-code-sharing - Materials, Software and Code\nhttps://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines\nhttps://binderhub.readthedocs.io/en/latest/overview.html\nhttps://book.the-turing-way.org/reproducible-research/code-reuse"
   },
   {
     "objectID": "slides.html#what-binder-ready-repository",
@@ -284,14 +368,7 @@
     "href": "slides.html#some-cons-about-binder",
     "title": "Making Code Ready for Publication",
     "section": "Some Cons about Binder",
-    "text": "Some Cons about Binder\n\nCurrently limited to 1 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
-  },
-  {
-    "objectID": "slides.html#targets-and-workflow-builders",
-    "href": "slides.html#targets-and-workflow-builders",
-    "title": "Making Code Ready for Publication",
-    "section": "{targets} and Workflow Builders",
-    "text": "{targets} and Workflow Builders\n\nAnother layer of complexity\nLets you chain together notebooks\nA lot like snakemake\n\nTargets example: https://github.com/biodev/hnscc_manuscript"
+    "text": "Some Cons about Binder\n\nCurrently limited to 2 Gb of memory for an instance\nIf your image files aren’t used at least once a week, they get deleted"
   },
   {
     "objectID": "slides.html#dockerfile",
@@ -329,18 +406,11 @@
     "text": "Nix\n\nCurrently investigating Nix as a language agnostic reproducibility framework"
   },
   {
-    "objectID": "slides.html#references",
-    "href": "slides.html#references",
-    "title": "Making Code Ready for Publication",
-    "section": "References",
-    "text": "References\n\nhttps://book.the-turing-way.org/reproducible-research/compendia/\nhttps://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510\nhttps://openscapes.github.io/series/core-lessons/coding-strategies.html\nhttps://hutchdatascience.org/Tools_for_Reproducible_Workflows_in_R/index.html\nhttps://www.nature.com/articles/s41467-021-25974-w\nhttps://journals.plos.org/plosone/s/materials-software-and-code-sharing - Materials, Software and Code\nhttps://osf.io/cb7z8/files/numa5 - AGILE Reproducible Paper Guidelines\nhttps://binderhub.readthedocs.io/en/latest/overview.html\n\nSource: https://book.the-turing-way.org/reproducible-research/code-reuse"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Making Code Ready for Publication",
     "section": "",
-    "text": "Code is an important product to share for publication. There are numerous benefits to sharing your code, including for your career and because publications now require it.\nIn this workshop, we will discuss ways to share analysis code in your publication, from sharing scripts and notebooks on github, to making your code executable via systems such as binder.org, to packaging your code to share with others as a software package.\n\n\n\n\nExplore examples of code in repositories being submitted with a paper (https://github.com/KarstensLab/igaseq example; https://github.com/laderast/ExonModelStrain example)\nExplain what kinds of files in a minimum set to include to share code and analyses in Python and R\nUtilize systems such as mybinder.org or GitHub codespaces to make your code runnable from your GitHub repository\nDiscuss the benefits of packaging and submitting your code to package repositories such as CRAN or PyPi\n\n\n\n\n\nMajority of us want to share analyses, not software\nLeverage some principles from software packaging to share scripts and notebooks\nSoftware packaging is its own topic\n\n\n\n\n\nIntro to Git/GitHub highly suggested"
+    "text": "Code is an important product to share for publication. There are numerous benefits to sharing your code, including for your career and because publications now require it.\nIn this workshop, we will discuss ways to share analysis code in your publication, from sharing scripts and notebooks on github, to making your code executable via systems such as binder.org, to packaging your code to share with others as a software package.\n\n\n\n\nExplore examples of code in repositories being submitted with a paper (https://github.com/KarstensLab/igaseq example; https://github.com/laderast/ExonModelStrain example)\nExplain what kinds of files in a minimum set to include to share code and analyses in Python and R\nUtilize systems such as mybinder.org or GitHub codespaces to make your code runnable from your GitHub repository\nDiscuss the benefits of packaging and submitting your code to package repositories such as CRAN or PyPi\n\n\n\n\n\nMajority of us want to share analyses, not software\nLeverage some principles from software packaging to share scripts and notebooks\nSoftware packaging is its own topic\n\n\n\n\n\n\n\n\nIntro to Git/GitHub highly suggested"
   },
   {
     "objectID": "index.html#description",
