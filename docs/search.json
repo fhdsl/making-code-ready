@@ -502,5 +502,19 @@
     "title": "Making Code Ready for Publication",
     "section": "TL; DR",
     "text": "TL; DR\n\nReproducibility is a spectrum\nUse separate folders for each of your projects\nOrganize code and Data\nGenerate lockfiles\nGet Help from DaSL / Open Sci Organizations\nDeposit data where required by papers"
+  },
+  {
+    "objectID": "slides.html#reminder",
+    "href": "slides.html#reminder",
+    "title": "Making Code Ready for Publication",
+    "section": "Reminder",
+    "text": "Reminder\nThis workshop adheres to the DaSL Learning Community Participation Guidelines:\nParticipation Guidelines\nPlease be respectful of your fellow learners and help each other learn.\nRemember, it’s dangerous to learn alone! So partner up with someone, it’s fun to learn together."
+  },
+  {
+    "objectID": "slides.html#introduction-you",
+    "href": "slides.html#introduction-you",
+    "title": "Making Code Ready for Publication",
+    "section": "Introduction (you)",
+    "text": "Introduction (you)\nIntroduce yourself live or in chat:\n\nYour name + pronouns\nYour group\nHow do you use spreadsheets in your work?\nFavorite winter activity"
   }
 ]
